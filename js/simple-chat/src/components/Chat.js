@@ -116,9 +116,10 @@ export default class Chat extends Component {
       if (presence.joins) {
         for (let i = 0, l = presence.joins.length; i < l; i++) {
           // convert a presence notification to a chat message for simple view logic.
+          const now = `${Date.now()}`;
           this.addMessage({
-            createdAt: Date.now(),
-            messageId: presence.joins[i].sessionId,
+            createdAt: now,
+            messageId: now,
             userId: presence.joins[i].userId,
             data: {
               content: 'Joined the room.'
@@ -129,12 +130,13 @@ export default class Chat extends Component {
       if (presence.leaves) {
         for (let i = 0, l = presence.leaves.length; i < l; i++) {
           // convert a presence notification to a chat message for simple view logic.
+          const now = `${Date.now()}`;
           this.addMessage({
-            createdAt: Date.now(),
-            messageId: presence.leaves[i].sessionId,
+            createdAt: now,
+            messageId: now,
             userId: presence.leaves[i].userId,
             data: {
-              content: 'Joined the room.'
+              content: 'Left the room.'
             }
           });
         }
@@ -168,12 +170,8 @@ export default class Chat extends Component {
   }
 
   render() {
-    const messages = [...this.state.messages].sort((a, b) => {
-      return a.createdAt < b.createdAt;
-    });
-    const logs = [...this.state.logs].sort((a, b) => {
-      return a.ts < b.ts;
-    });
+    const messages = [...this.state.messages].sort((a, b) => b.createdAt - a.createdAt);
+    const logs = [...this.state.logs].sort((a, b) => b.ts - a.ts);
     return (
       <Container fluid>
         <Header size='medium' as='h2'>Connect settings</Header>
@@ -223,6 +221,7 @@ export default class Chat extends Component {
                 onClick={this.submitMessage}
               />
             )} />
+            <Form.Button color='blue' onClick={() => this.setState({ messages: [] }) }>Clear</Form.Button>
             <Form.Field control={Checkbox} label='Auto Message'
               disabled={!this.state.connected}
               checked={!!this.state.autoInterval}
