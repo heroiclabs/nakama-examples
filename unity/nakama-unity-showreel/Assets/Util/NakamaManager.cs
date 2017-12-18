@@ -64,7 +64,6 @@ namespace Util
 					_dispatchQueue.Enqueue(() =>
 					{
 						PlayerPrefs.SetString("nk.session", session.Token);
-						Debug.Log("Got here?");
 						AfterConnected(this, EventArgs.Empty);
 					});
 				});
