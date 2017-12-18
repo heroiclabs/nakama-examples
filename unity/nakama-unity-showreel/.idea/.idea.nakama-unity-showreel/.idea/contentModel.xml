@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$PROJECT_DIR$" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Nakama" t="Include">
+          <e p="Example" t="Include">
+            <e p="Matchmake.cs" t="Include" />
+            <e p="README.txt" t="Include" />
+            <e p="UnityMainThreadDispatch.cs" t="Include" />
+            <e p="UserChat.cs" t="Include" />
+          </e>
+          <e p="Plugins" t="Include">
+            <e p="Nakama" t="Include">
+              <e p="Api.pb.cs" t="Include" />
+              <e p="INAuthenticateMessage.cs" t="Include" />
+              <e p="INClient.cs" t="Include" />
+              <e p="INCollatedMessage.cs" t="Include" />
+              <e p="INCursor.cs" t="Include" />
+              <e p="INDisconnectEvent.cs" t="Include" />
+              <e p="INError.cs" t="Include" />
+              <e p="INFriend.cs" t="Include" />
+              <e p="INGroup.cs" t="Include" />
+              <e p="INGroupSelf.cs" t="Include" />
+              <e p="INGroupUser.cs" t="Include" />
+              <e p="INLeaderboard.cs" t="Include" />
+              <e p="INLeaderboardRecord.cs" t="Include" />
+              <e p="INLogger.cs" t="Include" />
+              <e p="INMatch.cs" t="Include" />
+              <e p="INMatchData.cs" t="Include" />
+              <e p="INMatchmakeFilter.cs" t="Include" />
+              <e p="INMatchmakeMatched.cs" t="Include" />
+              <e p="INMatchmakeTicket.cs" t="Include" />
+              <e p="INMatchmakeUserProperty.cs" t="Include" />
+              <e p="INMatchPresence.cs" t="Include" />
+              <e p="INMatchToken.cs" t="Include" />
+              <e p="INNotification.cs" t="Include" />
+              <e p="INPurchaseRecord.cs" t="Include" />
+              <e p="INResultSet.cs" t="Include" />
+              <e p="INRuntimeRpc.cs" t="Include" />
+              <e p="INSelf.cs" t="Include" />
+              <e p="INSession.cs" t="Include" />
+              <e p="INStorageData.cs" t="Include" />
+              <e p="INStorageKey.cs" t="Include" />
+              <e p="INSyncState.cs" t="Include" />
+              <e p="INTopic.cs" t="Include" />
+              <e p="INTopicId.cs" t="Include" />
+              <e p="INTopicMessage.cs" t="Include" />
+              <e p="INTopicMessageAck.cs" t="Include" />
+              <e p="INTopicPresence.cs" t="Include" />
+              <e p="INTransport.cs" t="Include" />
+              <e p="INUncollatedMessage.cs" t="Include" />
+              <e p="INUser.cs" t="Include" />
+              <e p="INUserPresence.cs" t="Include" />
+              <e p="NAuthenticateMessage.cs" t="Include" />
+              <e p="NClient.cs" t="Include" />
+              <e p="NConsoleLogger.cs" t="Include" />
+              <e p="NCursor.cs" t="Include" />
+              <e p="NDisconnectEvent.cs" t="Include" />
+              <e p="NError.cs" t="Include" />
+              <e p="NFriend.cs" t="Include" />
+              <e p="NFriendAddMessage.cs" t="Include" />
+              <e p="NFriendBlockMessage.cs" t="Include" />
+              <e p="NFriendRemoveMessage.cs" t="Include" />
+              <e p="NFriendsListMessage.cs" t="Include" />
+              <e p="NGroup.cs" t="Include" />
+              <e p="NGroupAddUserMessage.cs" t="Include" />
+              <e p="NGroupCreateMessage.cs" t="Include" />
+              <e p="NGroupJoinMessage.cs" t="Include" />
+              <e p="NGroupKickUserMessage.cs" t="Include" />
+              <e p="NGroupLeaveMessage.cs" t="Include" />
+              <e p="NGroupPromoteUserMessage.cs" t="Include" />
+              <e p="NGroupRemoveMessage.cs" t="Include" />
+              <e p="NGroupSelf.cs" t="Include" />
+              <e p="NGroupsFetchMessage.cs" t="Include" />
+              <e p="NGroupsListMessage.cs" t="Include" />
+              <e p="NGroupsSelfListMessage.cs" t="Include" />
+              <e p="NGroupUpdateMessage.cs" t="Include" />
+              <e p="NGroupUser.cs" t="Include" />
+              <e p="NGroupUsersListMessage.cs" t="Include" />
+              <e p="NLeaderboard.cs" t="Include" />
+              <e p="NLeaderboardRecord.cs" t="Include" />
+              <e p="NLeaderboardRecordsFetchMessage.cs" t="Include" />
+              <e p="NLeaderboardRecordsListMessage.cs" t="Include" />
+              <e p="NLeaderboardRecordWriteMessage.cs" t="Include" />
+              <e p="NLeaderboardsListMessage.cs" t="Include" />
+              <e p="NManagedClient.cs" t="Include" />
+              <e p="NMatch.cs" t="Include" />
+              <e p="NMatchCreateMessage.cs" t="Include" />
+              <e p="NMatchData.cs" t="Include" />
+              <e p="NMatchDataSendMessage.cs" t="Include" />
+              <e p="NMatchJoinMessage.cs" t="Include" />
+              <e p="NMatchLeaveMessage.cs" t="Include" />
+              <e p="NMatchmakeAddMessage.cs" t="Include" />
+              <e p="NMatchmakeFilter.cs" t="Include" />
+              <e p="NMatchmakeMatched.cs" t="Include" />
+              <e p="NMatchmakeRemoveMessage.cs" t="Include" />
+              <e p="NMatchmakeTicket.cs" t="Include" />
+              <e p="NMatchmakeUserProperty.cs" t="Include" />
+              <e p="NMatchPresence.cs" t="Include" />
+              <e p="NMatchToken.cs" t="Include" />
+              <e p="NNotification.cs" t="Include" />
+              <e p="NNotificationsListMessage.cs" t="Include" />
+              <e p="NNotificationsRemoveMessage.cs" t="Include" />
+              <e p="NPurchaseRecord.cs" t="Include" />
+              <e p="NPurchaseValidateMessage.cs" t="Include" />
+              <e p="NResultSet.cs" t="Include" />
+              <e p="NRuntimeRpc.cs" t="Include" />
+              <e p="NRuntimeRpcMessage.cs" t="Include" />
+              <e p="NSelf.cs" t="Include" />
+              <e p="NSelfFetchMessage.cs" t="Include" />
+              <e p="NSelfLinkMessage.cs" t="Include" />
+              <e p="NSelfUnlinkMessage.cs" t="Include" />
+              <e p="NSelfUpdateMessage.cs" t="Include" />
+              <e p="NSession.cs" t="Include" />
+              <e p="NStorageData.cs" t="Include" />
+              <e p="NStorageFetchMessage.cs" t="Include" />
+              <e p="NStorageKey.cs" t="Include" />
+              <e p="NStorageListMessage.cs" t="Include" />
+              <e p="NStorageRemoveMessage.cs" t="Include" />
+              <e p="NStorageUpdateMessage.cs" t="Include" />
+              <e p="NStorageWriteMessage.cs" t="Include" />
+              <e p="NTopic.cs" t="Include" />
+              <e p="NTopicId.cs" t="Include" />
+              <e p="NTopicJoinMessage.cs" t="Include" />
+              <e p="NTopicLeaveMessage.cs" t="Include" />
+              <e p="NTopicMessage.cs" t="Include" />
+              <e p="NTopicMessageAck.cs" t="Include" />
+              <e p="NTopicMessageSendMessage.cs" t="Include" />
+              <e p="NTopicMessagesListMessage.cs" t="Include" />
+              <e p="NTopicPresence.cs" t="Include" />
+              <e p="NTransportJavascript.cs" t="Include" />
+              <e p="NTransportUdp.cs" t="Include" />
+              <e p="NTransportWebSocket.cs" t="Include" />
+              <e p="NUnityLogger.cs" t="Include" />
+              <e p="NUser.cs" t="Include" />
+              <e p="NUserPresence.cs" t="Include" />
+              <e p="NUsersFetchMessage.cs" t="Include" />
+              <e p="Properties" t="Include">
+                <e p="AssemblyInfo.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
+        <e p="Plugins" t="Include">
+          <e p="Editor" t="Include">
+            <e p="JetBrains" t="Include">
+              <e p="Unity3DRider.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="showreel" t="Include">
+          <e p="Authentication.cs" t="Include" />
+        </e>
+        <e p="util" t="Include">
+          <e p="Logger.cs" t="Include" />
+          <e p="NakamaManager.cs" t="Include" />
+          <e p="Singleton.cs" t="Include" />
+          <e p="StateManager.cs" t="Include" />
+        </e>
+      </e>
+      <e p="Library" t="ExcludeRecursive" />
+      <e p="nakama-unity-showreel.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
+    </e>
+    <e p="$USER_HOME$/Library/Caches/Rider2017.2/resharper-host/local/Transient/ReSharperHost/v10/SolutionCaches/_nakama-unity-showreel.1864265624.00" t="ExcludeRecursive" />
+  </component>
+</project>
