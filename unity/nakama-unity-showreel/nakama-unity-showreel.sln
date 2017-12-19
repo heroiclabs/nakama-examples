@@ -1,9 +1,9 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nakama-unity-showreel", "Assembly-CSharp.csproj", "{542C2692-D020-87DF-BFED-4752B89D72F5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{542C2692-D020-87DF-BFED-4752B89D72F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nakama-unity-showreel", "Assembly-CSharp-Editor-firstpass.csproj", "{1E018F42-556D-711C-3286-FB1684DB4340}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor-firstpass", "Assembly-CSharp-Editor-firstpass.csproj", "{1E018F42-556D-711C-3286-FB1684DB4340}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

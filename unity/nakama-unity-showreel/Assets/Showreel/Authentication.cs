@@ -18,7 +18,7 @@
 using Nakama;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Util;
+using Framework;
 
 namespace Showreel
 {
@@ -38,7 +38,7 @@ namespace Showreel
 		}
 
 		// Invoked by the UI 
-		public void PlayAsGuest()
+		public static void PlayAsGuest()
 		{
 			INAuthenticateMessage authMessage = BuildDeviceAuthenticateMessage();
 			NakamaManager.Instance.Connect(authMessage);

@@ -20,7 +20,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Util
+namespace Framework
 {
 	public class StateManager : Singleton<StateManager>
 	{

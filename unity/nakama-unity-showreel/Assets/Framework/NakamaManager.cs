@@ -20,7 +20,7 @@ using System.Collections.Generic;
 using Nakama;
 using UnityEngine;
 
-namespace Util
+namespace Framework
 {
 	public class NakamaManager : Singleton<NakamaManager>
 	{
@@ -42,9 +42,13 @@ namespace Util
 			Logger.LogErrorFormat("Error: code '{0}' with '{1}'.", err.Code, err.Message);
 		};
 
+		//TODO(mo): Facebook/Google Login with token expiry
 		private INAuthenticateMessage _authenticateMessage;
-		private uint reconnectCount = 0;
 		
+		// Flag to tell us whether the socket was closed intentially or not and whether to attempt reconnect.
+		private bool doReconnect = true;
+		private uint reconnectCount = 0;
+
 		public INSession Session { get; private set; }
 		
 		private NakamaManager()
@@ -72,7 +76,7 @@ namespace Util
 			_client.OnDisconnect = evt =>
 			{
 				Logger.Log("Disconnected from server.");
-				if (reconnectCount < MaxReconnectAttempts)
+				if (doReconnect && reconnectCount < MaxReconnectAttempts)
 				{
 					reconnectCount++;
 					_dispatchQueue.Enqueue(() => { Reconnect(); });
@@ -106,6 +110,7 @@ namespace Util
 		
 		private void OnApplicationQuit()
 		{
+			doReconnect = false;
 			_client.Disconnect();
 		}
 		
@@ -113,6 +118,7 @@ namespace Util
 		{
 			if (isPaused)
 			{
+				doReconnect = false;
 				_client.Disconnect();
 				return;
 			}
@@ -120,6 +126,7 @@ namespace Util
 			// let's re-authenticate (if neccessary) and reconnect to the server.
 			if (_authenticateMessage != null)
 			{
+				doReconnect = true;
 				Connect(_authenticateMessage);
 			}
 		}
@@ -143,10 +150,13 @@ namespace Util
 			// Let's login to authenticate and get a valid token
 			_client.Login(request, _sessionHandler, err =>
 			{
-				ErrorHandler(err);
 				if (err.Code == ErrorCode.UserNotFound)
 				{
 					_client.Register(request, _sessionHandler, ErrorHandler);
+				}
+				else
+				{
+					ErrorHandler(err);	
 				}
 			});
 		}

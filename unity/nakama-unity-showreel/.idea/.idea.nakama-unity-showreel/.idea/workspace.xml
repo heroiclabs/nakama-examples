@@ -11,76 +11,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="StateManager.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Util/StateManager.cs">
+      <file leaf-file-name="NakamaManager.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Framework/NakamaManager.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="26" column="73" lean-forward="false" selection-start-line="26" selection-start-column="73" selection-end-line="26" selection-end-column="73" />
+            <state relative-caret-position="1774">
+              <caret line="128" column="34" lean-forward="false" selection-start-line="128" selection-start-column="34" selection-end-line="128" selection-end-column="34" />
               <folding>
-                <marker date="1513611956566" expanded="true" signature="0:598" ph="/* Copyright 2017 The Nakama Authors ... */" />
-                <marker date="1513611956566" expanded="false" signature="607:693" ph="..." />
-                <marker date="1513611956566" expanded="true" signature="709:840" ph="{...}" />
-                <marker date="1513611956566" expanded="true" signature="764:838" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Authentication.cs" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Assets/Showreel/Authentication.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
-              <caret line="40" column="25" lean-forward="true" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
-              <folding>
-                <marker date="1513613043346" expanded="true" signature="0:598" ph="/* Copyright 2017 The Nakama Authors ... */" />
-                <marker date="1513613043346" expanded="true" signature="607:680" ph="..." />
-                <marker date="1513613043346" expanded="true" signature="700:1551" ph="{...}" />
-                <marker date="1513613043346" expanded="true" signature="747:1549" ph="{...}" />
-                <marker date="1513613043346" expanded="true" signature="773:1011" ph="{...}" />
-                <marker date="1513613043346" expanded="true" signature="829:884" ph="{...}" />
-                <marker date="1513613043346" expanded="true" signature="944:1005" ph="{...}" />
-                <marker date="1513613043346" expanded="true" signature="1064:1193" ph="{...}" />
-                <marker date="1513613043346" expanded="true" signature="1267:1546" ph="{...}" />
-                <marker date="1513613043346" expanded="true" signature="1354:1454" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NakamaManager.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Util/NakamaManager.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1590">
-              <caret line="110" column="9" lean-forward="false" selection-start-line="110" selection-start-column="9" selection-end-line="110" selection-end-column="9" />
-              <folding>
-                <marker date="1513612202922" expanded="true" signature="0:598" ph="/* Copyright 2017 The Nakama Authors ... */" />
-                <marker date="1513612202922" expanded="false" signature="606:706" ph="..." />
-                <marker date="1513612202922" expanded="true" signature="722:4756" ph="{...}" />
-                <marker date="1513612202922" expanded="true" signature="779:4754" ph="{...}" />
-                <marker date="1513612202922" expanded="true" signature="1379:1469" ph="{...}" />
-                <marker date="1513612202922" expanded="true" signature="1641:2642" ph="{...}" />
-                <marker date="1513612202922" expanded="true" signature="1831:2223" ph="{...}" />
-                <marker date="1513612202922" expanded="true" signature="1929:2216" ph="{...}" />
-                <marker date="1513612202922" expanded="true" signature="2061:2208" ph="{...}" />
-                <marker date="1513612202922" expanded="true" signature="2258:2586" ph="{...}" />
-                <marker date="1513612202922" expanded="true" signature="2355:2443" ph="{...}" />
-                <marker date="1513612202922" expanded="true" signature="2452:2581" ph="{...}" />
-                <marker date="1513612202922" expanded="true" signature="2677:2966" ph="{...}" />
-                <marker date="1513612202922" expanded="true" signature="2685:2825" ph="/* if it's the first time disconnected, then attempt to reconnect immediately ... */" />
-                <marker date="1513612202922" expanded="true" signature="2993:3100" ph="{...}" />
-                <marker date="1513612202922" expanded="true" signature="3054:3096" ph="{...}" />
-                <marker date="1513612202922" expanded="true" signature="3138:3171" ph="{...}" />
-                <marker date="1513612202922" expanded="true" signature="3223:3452" ph="{...}" />
-                <marker date="1513612202922" expanded="true" signature="3244:3292" ph="{...}" />
-                <marker date="1513612202922" expanded="true" signature="3403:3448" ph="{...}" />
-                <marker date="1513612202922" expanded="true" signature="3458:3559" ph="/* This method connects the client to the server and ... */" />
-                <marker date="1513612202922" expanded="true" signature="3612:4234" ph="{...}" />
-                <marker date="1513612202922" expanded="true" signature="3743:3835" ph="{...}" />
-                <marker date="1513612202922" expanded="true" signature="4076:4228" ph="{...}" />
-                <marker date="1513612202922" expanded="true" signature="4148:4223" ph="{...}" />
-                <marker date="1513612202922" expanded="true" signature="4240:4358" ph="/* Restore serialised session token from PlayerPrefs ... */" />
-                <marker date="1513612202922" expanded="true" signature="4402:4751" ph="{...}" />
-                <marker date="1513612202922" expanded="true" signature="4511:4584" ph="{...}" />
+                <marker date="1513694278493" expanded="true" signature="0:598" ph="/* Copyright 2017 The Nakama Authors ... */" />
+                <marker date="1513694278493" expanded="false" signature="606:706" ph="..." />
+                <marker date="1513694278493" expanded="true" signature="727:5036" ph="{...}" />
+                <marker date="1513694278493" expanded="true" signature="784:5034" ph="{...}" />
+                <marker date="1513694278493" expanded="true" signature="1384:1474" ph="{...}" />
+                <marker date="1513694278493" expanded="true" signature="1840:2826" ph="{...}" />
+                <marker date="1513694278493" expanded="true" signature="2030:2392" ph="{...}" />
+                <marker date="1513694278493" expanded="true" signature="2128:2385" ph="{...}" />
+                <marker date="1513694278493" expanded="true" signature="2260:2377" ph="{...}" />
+                <marker date="1513694278493" expanded="true" signature="2427:2770" ph="{...}" />
+                <marker date="1513694278493" expanded="true" signature="2539:2627" ph="{...}" />
+                <marker date="1513694278493" expanded="true" signature="2636:2765" ph="{...}" />
+                <marker date="1513694278493" expanded="true" signature="2861:3150" ph="{...}" />
+                <marker date="1513694278493" expanded="true" signature="2869:3009" ph="/* if it's the first time disconnected, then attempt to reconnect immediately ... */" />
+                <marker date="1513694278493" expanded="true" signature="3177:3284" ph="{...}" />
+                <marker date="1513694278493" expanded="true" signature="3238:3280" ph="{...}" />
+                <marker date="1513694278493" expanded="true" signature="3322:3379" ph="{...}" />
+                <marker date="1513694278493" expanded="true" signature="3431:3709" ph="{...}" />
+                <marker date="1513694278493" expanded="true" signature="3452:3525" ph="{...}" />
+                <marker date="1513694278493" expanded="true" signature="3636:3705" ph="{...}" />
+                <marker date="1513694278493" expanded="true" signature="3715:3816" ph="/* This method connects the client to the server and ... */" />
+                <marker date="1513694278493" expanded="true" signature="3869:4514" ph="{...}" />
+                <marker date="1513694278493" expanded="true" signature="4000:4092" ph="{...}" />
+                <marker date="1513694278493" expanded="true" signature="4333:4508" ph="{...}" />
+                <marker date="1513694278493" expanded="true" signature="4382:4457" ph="{...}" />
+                <marker date="1513694278493" expanded="true" signature="4466:4503" ph="{...}" />
+                <marker date="1513694278493" expanded="true" signature="4520:4638" ph="/* Restore serialised session token from PlayerPrefs ... */" />
+                <marker date="1513694278493" expanded="true" signature="4682:5031" ph="{...}" />
+                <marker date="1513694278493" expanded="true" signature="4791:4864" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -104,38 +69,43 @@
       <find>getWebsocketUri</find>
       <find>createWebSocket</find>
       <find>_sessionHandler</find>
+      <find>got here</find>
     </findStrings>
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3B63E63A-4A80-480D-BD2F-AACF76D58D93/7f/e45dcad7/ILogHandler.cs" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Assets/Nakama/Plugins/Nakama/NFriendBlockMessage.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Showreel/Authentication.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3B63E63A-4A80-480D-BD2F-AACF76D58D93/9b/8fd22d7a/ILogger.cs" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Assets/Util/Singleton.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Nakama/Plugins/Nakama/INLeaderboard.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Nakama/Plugins/Nakama/INMatchData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Util/Logger.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Nakama/Plugins/Nakama/NTransportJavascript.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Nakama/Example/UserChat.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Nakama/Plugins/Nakama/INCursor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Nakama/Example/UnityMainThreadDispatch.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Nakama/Plugins/Nakama/NFriendBlockMessage.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Framework/NakamaManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Nakama/Plugins/Nakama/INAuthenticateMessage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Nakama/Example/Matchmake.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Nakama/Plugins/Nakama/NTransportWebSocket.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Framework/StateManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Framework/Logger.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Framework/Singleton.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Nakama/Example/UserChat.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Nakama/Plugins/Nakama/INMatchmakeTicket.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Nakama/Plugins/Nakama/NClient.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Nakama/Plugins/Nakama/NTransportWebSocket.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Nakama/Plugins/Nakama/INCursor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Showreel/Authentication.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Nakama/Plugins/Nakama/NTransportJavascript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3B63E63A-4A80-480D-BD2F-AACF76D58D93/e8/57e182f4/Debug.cs" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Assets/Util/StateManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Nakama/Example/UnityMainThreadDispatch.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Nakama/Plugins/Nakama/INAuthenticateMessage.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Util/NakamaManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Nakama/Plugins/Nakama/INMatchData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Nakama/Plugins/Nakama/INLeaderboard.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Util/Singleton.cs" />
-        <option value="$PROJECT_DIR$/Assets/Util/Logger.cs" />
         <option value="$PROJECT_DIR$/Assets/Util/StateManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Util/NakamaManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Util/Logger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Framework/Logger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Framework/Singleton.cs" />
+        <option value="$PROJECT_DIR$/Assets/Framework/StateManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Showreel/Authentication.cs" />
+        <option value="$PROJECT_DIR$/Assets/Framework/NakamaManager.cs" />
       </list>
     </option>
   </component>
@@ -183,15 +153,7 @@
               <item name="nakama-unity-showreel (2 projects)" type="977d5f41:SolutionExplorerNodeRider" />
               <item name="Assembly-CSharp" type="977d5f41:SolutionExplorerNodeRider" />
               <item name="Assets" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="Nakama" type="977d5f41:SolutionExplorerNodeRider" />
-            </path>
-            <path>
-              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="nakama-unity-showreel (2 projects)" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="Assembly-CSharp" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="Assets" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="Nakama" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="Plugins" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Framework" type="977d5f41:SolutionExplorerNodeRider" />
             </path>
             <path>
               <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
@@ -199,13 +161,6 @@
               <item name="Assembly-CSharp" type="977d5f41:SolutionExplorerNodeRider" />
               <item name="Assets" type="977d5f41:SolutionExplorerNodeRider" />
               <item name="Showreel" type="977d5f41:SolutionExplorerNodeRider" />
-            </path>
-            <path>
-              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="nakama-unity-showreel (2 projects)" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="Assembly-CSharp" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="Assets" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="Util" type="977d5f41:SolutionExplorerNodeRider" />
             </path>
           </expand>
           <select />
@@ -248,11 +203,12 @@
       <workItem from="1513160855158" duration="544000" />
       <workItem from="1513161543555" duration="14539000" />
       <workItem from="1513541619203" duration="6453000" />
+      <workItem from="1513614402835" duration="2342000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21749000" />
+    <option name="totallyTimeSpent" value="24091000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -296,42 +252,113 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Assets/Util/StateManager.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/Framework/StateManager.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="345">
+          <caret line="26" column="73" lean-forward="false" selection-start-line="26" selection-start-column="73" selection-end-line="26" selection-end-column="73" />
           <folding>
-            <marker date="1513611956566" expanded="true" signature="0:598" ph="/* Copyright 2017 The Nakama Authors ... */" />
-            <marker date="1513611956566" expanded="false" signature="607:693" ph="..." />
-            <marker date="1513611956566" expanded="true" signature="709:840" ph="{...}" />
-            <marker date="1513611956566" expanded="true" signature="764:838" ph="{...}" />
+            <marker date="1513693628946" expanded="true" signature="0:598" ph="/* Copyright 2017 The Nakama Authors ... */" />
+            <marker date="1513693628946" expanded="false" signature="607:693" ph="..." />
+            <marker date="1513693628946" expanded="true" signature="714:845" ph="{...}" />
+            <marker date="1513693628946" expanded="true" signature="769:843" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Util/Logger.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/Framework/NakamaManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1590">
+          <caret line="110" column="9" lean-forward="false" selection-start-line="110" selection-start-column="9" selection-end-line="110" selection-end-column="9" />
+          <folding>
+            <marker date="1513694278493" expanded="true" signature="0:598" ph="/* Copyright 2017 The Nakama Authors ... */" />
+            <marker date="1513694278493" expanded="false" signature="606:706" ph="..." />
+            <marker date="1513694278493" expanded="true" signature="727:5036" ph="{...}" />
+            <marker date="1513694278493" expanded="true" signature="784:5034" ph="{...}" />
+            <marker date="1513694278493" expanded="true" signature="1384:1474" ph="{...}" />
+            <marker date="1513694278493" expanded="true" signature="1840:2826" ph="{...}" />
+            <marker date="1513694278493" expanded="true" signature="2030:2392" ph="{...}" />
+            <marker date="1513694278493" expanded="true" signature="2128:2385" ph="{...}" />
+            <marker date="1513694278493" expanded="true" signature="2260:2377" ph="{...}" />
+            <marker date="1513694278493" expanded="true" signature="2427:2770" ph="{...}" />
+            <marker date="1513694278493" expanded="true" signature="2539:2627" ph="{...}" />
+            <marker date="1513694278493" expanded="true" signature="2636:2765" ph="{...}" />
+            <marker date="1513694278493" expanded="true" signature="2861:3150" ph="{...}" />
+            <marker date="1513694278493" expanded="true" signature="2869:3009" ph="/* if it's the first time disconnected, then attempt to reconnect immediately ... */" />
+            <marker date="1513694278493" expanded="true" signature="3177:3284" ph="{...}" />
+            <marker date="1513694278493" expanded="true" signature="3238:3280" ph="{...}" />
+            <marker date="1513694278493" expanded="true" signature="3322:3379" ph="{...}" />
+            <marker date="1513694278493" expanded="true" signature="3431:3709" ph="{...}" />
+            <marker date="1513694278493" expanded="true" signature="3452:3525" ph="{...}" />
+            <marker date="1513694278493" expanded="true" signature="3636:3705" ph="{...}" />
+            <marker date="1513694278493" expanded="true" signature="3715:3816" ph="/* This method connects the client to the server and ... */" />
+            <marker date="1513694278493" expanded="true" signature="3869:4514" ph="{...}" />
+            <marker date="1513694278493" expanded="true" signature="4000:4092" ph="{...}" />
+            <marker date="1513694278493" expanded="true" signature="4333:4508" ph="{...}" />
+            <marker date="1513694278493" expanded="true" signature="4382:4457" ph="{...}" />
+            <marker date="1513694278493" expanded="true" signature="4466:4503" ph="{...}" />
+            <marker date="1513694278493" expanded="true" signature="4520:4638" ph="/* Restore serialised session token from PlayerPrefs ... */" />
+            <marker date="1513694278493" expanded="true" signature="4682:5031" ph="{...}" />
+            <marker date="1513694278493" expanded="true" signature="4791:4864" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Showreel/Authentication.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="40" column="25" lean-forward="true" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
+          <folding>
+            <marker date="1513693951441" expanded="true" signature="0:598" ph="/* Copyright 2017 The Nakama Authors ... */" />
+            <marker date="1513693951441" expanded="false" signature="607:685" ph="..." />
+            <marker date="1513693951441" expanded="true" signature="705:1563" ph="{...}" />
+            <marker date="1513693951441" expanded="true" signature="752:1561" ph="{...}" />
+            <marker date="1513693951441" expanded="true" signature="778:1016" ph="{...}" />
+            <marker date="1513693951441" expanded="true" signature="834:889" ph="{...}" />
+            <marker date="1513693951441" expanded="true" signature="949:1010" ph="{...}" />
+            <marker date="1513693951441" expanded="true" signature="1076:1205" ph="{...}" />
+            <marker date="1513693951441" expanded="true" signature="1279:1558" ph="{...}" />
+            <marker date="1513693951441" expanded="true" signature="1366:1466" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Framework/StateManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1513693628946" expanded="true" signature="0:598" ph="/* Copyright 2017 The Nakama Authors ... */" />
+            <marker date="1513693628946" expanded="false" signature="607:693" ph="..." />
+            <marker date="1513693628946" expanded="true" signature="714:845" ph="{...}" />
+            <marker date="1513693628946" expanded="true" signature="769:843" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Framework/Logger.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="18" lean-forward="false" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
           <folding>
-            <marker date="1513541631931" expanded="true" signature="119:4329" ph="{...}" />
-            <marker date="1513541631931" expanded="true" signature="148:4327" ph="{...}" />
-            <marker date="1513541631931" expanded="true" signature="177:467" ph="///   &lt;para&gt;Logs message to the Unity Console.&lt;/para&gt; ... " />
-            <marker date="1513541631931" expanded="true" signature="514:618" ph="{...}" />
-            <marker date="1513541631931" expanded="true" signature="639:929" ph="///   &lt;para&gt;Logs message to the Unity Console.&lt;/para&gt; ... " />
-            <marker date="1513541631931" expanded="true" signature="992:1112" ph="{...}" />
-            <marker date="1513541631931" expanded="true" signature="1126:1440" ph="///   &lt;para&gt;Logs a formatted message to the Unity Console.&lt;/para&gt; ... " />
-            <marker date="1513541631931" expanded="true" signature="1514:1636" ph="{...}" />
-            <marker date="1513541631931" expanded="true" signature="1650:1964" ph="///   &lt;para&gt;Logs a formatted message to the Unity Console.&lt;/para&gt; ... " />
-            <marker date="1513541631931" expanded="true" signature="2054:2185" ph="{...}" />
-            <marker date="1513541631931" expanded="true" signature="2199:2520" ph="///   &lt;para&gt;A variant of Debug.Log that logs an error message to the console.&lt;/para&gt; ... " />
-            <marker date="1513541631931" expanded="true" signature="2572:2688" ph="{...}" />
-            <marker date="1513541631931" expanded="true" signature="2702:3023" ph="///   &lt;para&gt;A variant of Debug.Log that logs an error message to the console.&lt;/para&gt; ... " />
-            <marker date="1513541631931" expanded="true" signature="3091:3216" ph="{...}" />
-            <marker date="1513541631931" expanded="true" signature="3230:3550" ph="///   &lt;para&gt;Logs a formatted error message to the Unity console.&lt;/para&gt; ... " />
-            <marker date="1513541631931" expanded="true" signature="3629:3756" ph="{...}" />
-            <marker date="1513541631931" expanded="true" signature="3770:4090" ph="///   &lt;para&gt;Logs a formatted error message to the Unity console.&lt;/para&gt; ... " />
-            <marker date="1513541631931" expanded="true" signature="4185:4321" ph="{...}" />
+            <marker date="1513693614688" expanded="true" signature="0:598" ph="/* Copyright 2017 The Nakama Authors ... */" />
+            <marker date="1513693614688" expanded="true" signature="724:4927" ph="{...}" />
+            <marker date="1513693614688" expanded="true" signature="760:4925" ph="{...}" />
+            <marker date="1513693614688" expanded="true" signature="776:1066" ph="///   &lt;para&gt;Logs message to the Unity Console.&lt;/para&gt; ... " />
+            <marker date="1513693614688" expanded="true" signature="1113:1227" ph="{...}" />
+            <marker date="1513693614688" expanded="true" signature="1237:1527" ph="///   &lt;para&gt;Logs message to the Unity Console.&lt;/para&gt; ... " />
+            <marker date="1513693614688" expanded="true" signature="1590:1710" ph="{...}" />
+            <marker date="1513693614688" expanded="true" signature="1724:2038" ph="///   &lt;para&gt;Logs a formatted message to the Unity Console.&lt;/para&gt; ... " />
+            <marker date="1513693614688" expanded="true" signature="2112:2234" ph="{...}" />
+            <marker date="1513693614688" expanded="true" signature="2248:2562" ph="///   &lt;para&gt;Logs a formatted message to the Unity Console.&lt;/para&gt; ... " />
+            <marker date="1513693614688" expanded="true" signature="2652:2783" ph="{...}" />
+            <marker date="1513693614688" expanded="true" signature="2797:3118" ph="///   &lt;para&gt;A variant of Debug.Log that logs an error message to the console.&lt;/para&gt; ... " />
+            <marker date="1513693614688" expanded="true" signature="3170:3286" ph="{...}" />
+            <marker date="1513693614688" expanded="true" signature="3300:3621" ph="///   &lt;para&gt;A variant of Debug.Log that logs an error message to the console.&lt;/para&gt; ... " />
+            <marker date="1513693614688" expanded="true" signature="3689:3814" ph="{...}" />
+            <marker date="1513693614688" expanded="true" signature="3828:4148" ph="///   &lt;para&gt;Logs a formatted error message to the Unity console.&lt;/para&gt; ... " />
+            <marker date="1513693614688" expanded="true" signature="4227:4354" ph="{...}" />
+            <marker date="1513693614688" expanded="true" signature="4368:4688" ph="///   &lt;para&gt;Logs a formatted error message to the Unity console.&lt;/para&gt; ... " />
+            <marker date="1513693614688" expanded="true" signature="4783:4919" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -341,16 +368,16 @@
         <state relative-caret-position="435">
           <caret line="29" column="74" lean-forward="false" selection-start-line="29" selection-start-column="53" selection-end-line="29" selection-end-column="74" />
           <folding>
-            <marker date="1513613043346" expanded="true" signature="0:598" ph="/* Copyright 2017 The Nakama Authors ... */" />
-            <marker date="1513613043346" expanded="true" signature="607:680" ph="..." />
-            <marker date="1513613043346" expanded="true" signature="700:1551" ph="{...}" />
-            <marker date="1513613043346" expanded="true" signature="747:1549" ph="{...}" />
-            <marker date="1513613043346" expanded="true" signature="773:1011" ph="{...}" />
-            <marker date="1513613043346" expanded="true" signature="829:884" ph="{...}" />
-            <marker date="1513613043346" expanded="true" signature="944:1005" ph="{...}" />
-            <marker date="1513613043346" expanded="true" signature="1064:1193" ph="{...}" />
-            <marker date="1513613043346" expanded="true" signature="1267:1546" ph="{...}" />
-            <marker date="1513613043346" expanded="true" signature="1354:1454" ph="{...}" />
+            <marker date="1513693951441" expanded="true" signature="0:598" ph="/* Copyright 2017 The Nakama Authors ... */" />
+            <marker date="1513693951441" expanded="false" signature="607:685" ph="..." />
+            <marker date="1513693951441" expanded="true" signature="705:1563" ph="{...}" />
+            <marker date="1513693951441" expanded="true" signature="752:1561" ph="{...}" />
+            <marker date="1513693951441" expanded="true" signature="778:1016" ph="{...}" />
+            <marker date="1513693951441" expanded="true" signature="834:889" ph="{...}" />
+            <marker date="1513693951441" expanded="true" signature="949:1010" ph="{...}" />
+            <marker date="1513693951441" expanded="true" signature="1076:1205" ph="{...}" />
+            <marker date="1513693951441" expanded="true" signature="1279:1558" ph="{...}" />
+            <marker date="1513693951441" expanded="true" signature="1366:1466" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -359,51 +386,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="615">
           <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding>
-            <marker date="1511793205000" expanded="false" signature="6:113" ph="..." />
-            <marker date="1511793205000" expanded="true" signature="153:8640" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="1433:3544" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="2618:2653" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="2714:3050" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="2760:2881" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="2927:3046" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="3108:3143" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="3204:3540" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="3250:3371" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="3417:3536" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="3562:4203" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="4231:4348" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="4257:4288" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="4314:4345" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="4386:4732" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="4537:4632" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="4653:4727" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="4767:5203" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="4915:5106" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="5127:5198" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="5241:5556" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="5355:5450" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="5471:5551" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="5591:5996" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="5702:5893" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="5914:5991" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="6028:6170" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="6202:6378" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="6412:6997" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="6582:6884" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="6641:6768" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="6905:6992" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="7031:7679" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="7201:7566" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="7260:7387" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="7587:7674" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="7719:8158" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="7993:8041" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="8061:8153" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="8198:8638" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="8475:8523" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="8544:8633" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -502,122 +484,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
           <caret line="187" column="24" lean-forward="true" selection-start-line="187" selection-start-column="24" selection-end-line="187" selection-end-column="24" />
-          <folding>
-            <marker date="1511793190000" expanded="true" signature="0:598" ph="/* Copyright 2017 The Nakama Authors ... */" />
-            <marker date="1511793190000" expanded="false" signature="606:744" ph="..." />
-            <marker date="1511793190000" expanded="true" signature="762:10042" ph="{...}" />
-            <marker date="1511793190000" expanded="true" signature="817:10040" ph="{...}" />
-            <marker date="1511793190000" expanded="true" signature="1422:2814" ph="{...}" />
-            <marker date="1511793190000" expanded="true" signature="2397:2789" ph="{...}" />
-            <marker date="1511793190000" expanded="true" signature="2438:2563" ph="{...}" />
-            <marker date="1511793190000" expanded="true" signature="3019:4715" ph="{...}" />
-            <marker date="1511793190000" expanded="true" signature="3146:4518" ph="{...}" />
-            <marker date="1511793190000" expanded="true" signature="3180:3633" ph="{...}" />
-            <marker date="1511793190000" expanded="true" signature="3672:3831" ph="{...}" />
-            <marker date="1511793190000" expanded="true" signature="3882:4493" ph="{...}" />
-            <marker date="1511793190000" expanded="true" signature="3924:4127" ph="{...}" />
-            <marker date="1511793190000" expanded="true" signature="4170:4475" ph="{...}" />
-            <marker date="1511793190000" expanded="true" signature="4251:4413" ph="{...}" />
-            <marker date="1511793190000" expanded="true" signature="4567:4687" ph="{...}" />
-            <marker date="1511793190000" expanded="true" signature="4787:5063" ph="{...}" />
-            <marker date="1511793190000" expanded="true" signature="5124:5573" ph="{...}" />
-            <marker date="1511793190000" expanded="true" signature="5227:5563" ph="{...}" />
-            <marker date="1511793190000" expanded="true" signature="5270:5549" ph="{...}" />
-            <marker date="1511793190000" expanded="true" signature="5394:5483" ph="{...}" />
-            <marker date="1511793190000" expanded="true" signature="5623:7184" ph="{...}" />
-            <marker date="1511793190000" expanded="true" signature="5697:5776" ph="{...}" />
-            <marker date="1511793190000" expanded="true" signature="5824:6189" ph="{...}" />
-            <marker date="1511793190000" expanded="true" signature="6062:6175" ph="{...}" />
-            <marker date="1511793190000" expanded="true" signature="6239:6776" ph="{...}" />
-            <marker date="1511793190000" expanded="true" signature="6285:6426" ph="{...}" />
-            <marker date="1511793190000" expanded="true" signature="6459:6614" ph="{...}" />
-            <marker date="1511793190000" expanded="true" signature="6654:6762" ph="{...}" />
-            <marker date="1511793190000" expanded="true" signature="6824:6995" ph="{...}" />
-            <marker date="1511793190000" expanded="true" signature="6875:6981" ph="{...}" />
-            <marker date="1511793190000" expanded="true" signature="7042:7172" ph="{...}" />
-            <marker date="1511793190000" expanded="true" signature="7092:7158" ph="{...}" />
-            <marker date="1511793190000" expanded="true" signature="7239:7739" ph="{...}" />
-            <marker date="1511793190000" expanded="true" signature="7281:7347" ph="{...}" />
-            <marker date="1511793190000" expanded="true" signature="7822:8491" ph="{...}" />
-            <marker date="1511793190000" expanded="true" signature="7864:8445" ph="{...}" />
-            <marker date="1511793190000" expanded="true" signature="7964:8430" ph="{...}" />
-            <marker date="1511793190000" expanded="true" signature="8520:8654" ph="{...}" />
-            <marker date="1511793190000" expanded="true" signature="8562:8644" ph="{...}" />
-            <marker date="1511793190000" expanded="true" signature="8703:8866" ph="{...}" />
-            <marker date="1511793190000" expanded="true" signature="8745:8832" ph="{...}" />
-            <marker date="1511793190000" expanded="true" signature="8920:9164" ph="{...}" />
-            <marker date="1511793190000" expanded="true" signature="8962:9025" ph="{...}" />
-            <marker date="1511793190000" expanded="true" signature="9042:9154" ph="{...}" />
-            <marker date="1511793190000" expanded="true" signature="9247:9546" ph="{...}" />
-            <marker date="1511793190000" expanded="true" signature="9289:9368" ph="{...}" />
-            <marker date="1511793190000" expanded="true" signature="9385:9536" ph="{...}" />
-            <marker date="1511793190000" expanded="true" signature="9616:9672" ph="{...}" />
-            <marker date="1511793190000" expanded="true" signature="9742:9798" ph="{...}" />
-            <marker date="1511793190000" expanded="true" signature="9874:9934" ph="{...}" />
-            <marker date="1511793190000" expanded="true" signature="9980:10034" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Util/Logger.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="18" lean-forward="false" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
-          <folding>
-            <marker date="1513541631931" expanded="true" signature="119:4329" ph="{...}" />
-            <marker date="1513541631931" expanded="true" signature="148:4327" ph="{...}" />
-            <marker date="1513541631931" expanded="true" signature="177:467" ph="///   &lt;para&gt;Logs message to the Unity Console.&lt;/para&gt; ... " />
-            <marker date="1513541631931" expanded="true" signature="514:618" ph="{...}" />
-            <marker date="1513541631931" expanded="true" signature="639:929" ph="///   &lt;para&gt;Logs message to the Unity Console.&lt;/para&gt; ... " />
-            <marker date="1513541631931" expanded="true" signature="992:1112" ph="{...}" />
-            <marker date="1513541631931" expanded="true" signature="1126:1440" ph="///   &lt;para&gt;Logs a formatted message to the Unity Console.&lt;/para&gt; ... " />
-            <marker date="1513541631931" expanded="true" signature="1514:1636" ph="{...}" />
-            <marker date="1513541631931" expanded="true" signature="1650:1964" ph="///   &lt;para&gt;Logs a formatted message to the Unity Console.&lt;/para&gt; ... " />
-            <marker date="1513541631931" expanded="true" signature="2054:2185" ph="{...}" />
-            <marker date="1513541631931" expanded="true" signature="2199:2520" ph="///   &lt;para&gt;A variant of Debug.Log that logs an error message to the console.&lt;/para&gt; ... " />
-            <marker date="1513541631931" expanded="true" signature="2572:2688" ph="{...}" />
-            <marker date="1513541631931" expanded="true" signature="2702:3023" ph="///   &lt;para&gt;A variant of Debug.Log that logs an error message to the console.&lt;/para&gt; ... " />
-            <marker date="1513541631931" expanded="true" signature="3091:3216" ph="{...}" />
-            <marker date="1513541631931" expanded="true" signature="3230:3550" ph="///   &lt;para&gt;Logs a formatted error message to the Unity console.&lt;/para&gt; ... " />
-            <marker date="1513541631931" expanded="true" signature="3629:3756" ph="{...}" />
-            <marker date="1513541631931" expanded="true" signature="3770:4090" ph="///   &lt;para&gt;Logs a formatted error message to the Unity console.&lt;/para&gt; ... " />
-            <marker date="1513541631931" expanded="true" signature="4185:4321" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Util/StateManager.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="26" column="73" lean-forward="false" selection-start-line="26" selection-start-column="73" selection-end-line="26" selection-end-column="73" />
-          <folding>
-            <marker date="1513611956566" expanded="true" signature="0:598" ph="/* Copyright 2017 The Nakama Authors ... */" />
-            <marker date="1513611956566" expanded="false" signature="607:693" ph="..." />
-            <marker date="1513611956566" expanded="true" signature="709:840" ph="{...}" />
-            <marker date="1513611956566" expanded="true" signature="764:838" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Util/Singleton.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="27" column="34" lean-forward="false" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
-          <folding>
-            <marker date="1513175470206" expanded="true" signature="0:598" ph="/* Copyright 2017 The Nakama Authors ... */" />
-            <marker date="1513175470206" expanded="true" signature="635:1858" ph="{...}" />
-            <marker date="1513175470206" expanded="true" signature="712:1856" ph="{...}" />
-            <marker date="1513175470206" expanded="true" signature="729:791" ph="/// The instance. ... " />
-            <marker date="1513175470206" expanded="true" signature="836:944" ph="/// Gets the instance. ... " />
-            <marker date="1513175470206" expanded="true" signature="977:1466" ph="{...}" />
-            <marker date="1513175470206" expanded="true" signature="1003:1456" ph="{...}" />
-            <marker date="1513175470206" expanded="true" signature="1057:1409" ph="{...}" />
-            <marker date="1513175470206" expanded="true" signature="1174:1391" ph="{...}" />
-            <marker date="1513175470206" expanded="true" signature="1476:1553" ph="/// Use this for initialization. ... " />
-            <marker date="1513175470206" expanded="true" signature="1593:1850" ph="{...}" />
-            <marker date="1513175470206" expanded="true" signature="1639:1755" ph="{...}" />
-            <marker date="1513175470206" expanded="true" signature="1772:1840" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -625,106 +491,125 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="385">
           <caret line="48" column="8" lean-forward="false" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Framework/Logger.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="21" column="10" lean-forward="true" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="19" />
           <folding>
-            <marker date="1511793205000" expanded="false" signature="6:113" ph="..." />
-            <marker date="1511793205000" expanded="true" signature="153:8640" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="1433:3544" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="2618:2653" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="2714:3050" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="2760:2881" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="2927:3046" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="3108:3143" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="3204:3540" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="3250:3371" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="3417:3536" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="3562:4203" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="4231:4348" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="4257:4288" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="4314:4345" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="4386:4732" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="4537:4632" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="4653:4727" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="4767:5203" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="4915:5106" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="5127:5198" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="5241:5556" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="5355:5450" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="5471:5551" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="5591:5996" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="5702:5893" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="5914:5991" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="6028:6170" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="6202:6378" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="6412:6997" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="6582:6884" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="6641:6768" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="6905:6992" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="7031:7679" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="7201:7566" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="7260:7387" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="7587:7674" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="7719:8158" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="7993:8041" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="8061:8153" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="8198:8638" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="8475:8523" ph="{...}" />
-            <marker date="1511793205000" expanded="true" signature="8544:8633" ph="{...}" />
+            <marker date="1513693614688" expanded="true" signature="0:598" ph="/* Copyright 2017 The Nakama Authors ... */" />
+            <marker date="1513693614688" expanded="true" signature="724:4927" ph="{...}" />
+            <marker date="1513693614688" expanded="true" signature="760:4925" ph="{...}" />
+            <marker date="1513693614688" expanded="true" signature="776:1066" ph="///   &lt;para&gt;Logs message to the Unity Console.&lt;/para&gt; ... " />
+            <marker date="1513693614688" expanded="true" signature="1113:1227" ph="{...}" />
+            <marker date="1513693614688" expanded="true" signature="1237:1527" ph="///   &lt;para&gt;Logs message to the Unity Console.&lt;/para&gt; ... " />
+            <marker date="1513693614688" expanded="true" signature="1590:1710" ph="{...}" />
+            <marker date="1513693614688" expanded="true" signature="1724:2038" ph="///   &lt;para&gt;Logs a formatted message to the Unity Console.&lt;/para&gt; ... " />
+            <marker date="1513693614688" expanded="true" signature="2112:2234" ph="{...}" />
+            <marker date="1513693614688" expanded="true" signature="2248:2562" ph="///   &lt;para&gt;Logs a formatted message to the Unity Console.&lt;/para&gt; ... " />
+            <marker date="1513693614688" expanded="true" signature="2652:2783" ph="{...}" />
+            <marker date="1513693614688" expanded="true" signature="2797:3118" ph="///   &lt;para&gt;A variant of Debug.Log that logs an error message to the console.&lt;/para&gt; ... " />
+            <marker date="1513693614688" expanded="true" signature="3170:3286" ph="{...}" />
+            <marker date="1513693614688" expanded="true" signature="3300:3621" ph="///   &lt;para&gt;A variant of Debug.Log that logs an error message to the console.&lt;/para&gt; ... " />
+            <marker date="1513693614688" expanded="true" signature="3689:3814" ph="{...}" />
+            <marker date="1513693614688" expanded="true" signature="3828:4148" ph="///   &lt;para&gt;Logs a formatted error message to the Unity console.&lt;/para&gt; ... " />
+            <marker date="1513693614688" expanded="true" signature="4227:4354" ph="{...}" />
+            <marker date="1513693614688" expanded="true" signature="4368:4688" ph="///   &lt;para&gt;Logs a formatted error message to the Unity console.&lt;/para&gt; ... " />
+            <marker date="1513693614688" expanded="true" signature="4783:4919" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Util/NakamaManager.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/Framework/Singleton.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1590">
-          <caret line="110" column="9" lean-forward="false" selection-start-line="110" selection-start-column="9" selection-end-line="110" selection-end-column="9" />
+        <state relative-caret-position="125">
+          <caret line="19" column="19" lean-forward="false" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
           <folding>
-            <marker date="1513612202922" expanded="true" signature="0:598" ph="/* Copyright 2017 The Nakama Authors ... */" />
-            <marker date="1513612202922" expanded="false" signature="606:706" ph="..." />
-            <marker date="1513612202922" expanded="true" signature="722:4756" ph="{...}" />
-            <marker date="1513612202922" expanded="true" signature="779:4754" ph="{...}" />
-            <marker date="1513612202922" expanded="true" signature="1379:1469" ph="{...}" />
-            <marker date="1513612202922" expanded="true" signature="1641:2642" ph="{...}" />
-            <marker date="1513612202922" expanded="true" signature="1831:2223" ph="{...}" />
-            <marker date="1513612202922" expanded="true" signature="1929:2216" ph="{...}" />
-            <marker date="1513612202922" expanded="true" signature="2061:2208" ph="{...}" />
-            <marker date="1513612202922" expanded="true" signature="2258:2586" ph="{...}" />
-            <marker date="1513612202922" expanded="true" signature="2355:2443" ph="{...}" />
-            <marker date="1513612202922" expanded="true" signature="2452:2581" ph="{...}" />
-            <marker date="1513612202922" expanded="true" signature="2677:2966" ph="{...}" />
-            <marker date="1513612202922" expanded="true" signature="2685:2825" ph="/* if it's the first time disconnected, then attempt to reconnect immediately ... */" />
-            <marker date="1513612202922" expanded="true" signature="2993:3100" ph="{...}" />
-            <marker date="1513612202922" expanded="true" signature="3054:3096" ph="{...}" />
-            <marker date="1513612202922" expanded="true" signature="3138:3171" ph="{...}" />
-            <marker date="1513612202922" expanded="true" signature="3223:3452" ph="{...}" />
-            <marker date="1513612202922" expanded="true" signature="3244:3292" ph="{...}" />
-            <marker date="1513612202922" expanded="true" signature="3403:3448" ph="{...}" />
-            <marker date="1513612202922" expanded="true" signature="3458:3559" ph="/* This method connects the client to the server and ... */" />
-            <marker date="1513612202922" expanded="true" signature="3612:4234" ph="{...}" />
-            <marker date="1513612202922" expanded="true" signature="3743:3835" ph="{...}" />
-            <marker date="1513612202922" expanded="true" signature="4076:4228" ph="{...}" />
-            <marker date="1513612202922" expanded="true" signature="4148:4223" ph="{...}" />
-            <marker date="1513612202922" expanded="true" signature="4240:4358" ph="/* Restore serialised session token from PlayerPrefs ... */" />
-            <marker date="1513612202922" expanded="true" signature="4402:4751" ph="{...}" />
-            <marker date="1513612202922" expanded="true" signature="4511:4584" ph="{...}" />
+            <marker date="1513693626512" expanded="true" signature="0:598" ph="/* Copyright 2017 The Nakama Authors ... */" />
+            <marker date="1513693626512" expanded="true" signature="640:1863" ph="{...}" />
+            <marker date="1513693626512" expanded="true" signature="717:1861" ph="{...}" />
+            <marker date="1513693626512" expanded="true" signature="734:796" ph="/// The instance. ... " />
+            <marker date="1513693626512" expanded="true" signature="841:949" ph="/// Gets the instance. ... " />
+            <marker date="1513693626512" expanded="true" signature="982:1471" ph="{...}" />
+            <marker date="1513693626512" expanded="true" signature="1008:1461" ph="{...}" />
+            <marker date="1513693626512" expanded="true" signature="1062:1414" ph="{...}" />
+            <marker date="1513693626512" expanded="true" signature="1179:1396" ph="{...}" />
+            <marker date="1513693626512" expanded="true" signature="1481:1558" ph="/// Use this for initialization. ... " />
+            <marker date="1513693626512" expanded="true" signature="1598:1855" ph="{...}" />
+            <marker date="1513693626512" expanded="true" signature="1644:1760" ph="{...}" />
+            <marker date="1513693626512" expanded="true" signature="1777:1845" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Showreel/Authentication.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="40" column="25" lean-forward="true" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
+        <state relative-caret-position="585">
+          <caret line="42" column="31" lean-forward="true" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
           <folding>
-            <marker date="1513613043346" expanded="true" signature="0:598" ph="/* Copyright 2017 The Nakama Authors ... */" />
-            <marker date="1513613043346" expanded="true" signature="607:680" ph="..." />
-            <marker date="1513613043346" expanded="true" signature="700:1551" ph="{...}" />
-            <marker date="1513613043346" expanded="true" signature="747:1549" ph="{...}" />
-            <marker date="1513613043346" expanded="true" signature="773:1011" ph="{...}" />
-            <marker date="1513613043346" expanded="true" signature="829:884" ph="{...}" />
-            <marker date="1513613043346" expanded="true" signature="944:1005" ph="{...}" />
-            <marker date="1513613043346" expanded="true" signature="1064:1193" ph="{...}" />
-            <marker date="1513613043346" expanded="true" signature="1267:1546" ph="{...}" />
-            <marker date="1513613043346" expanded="true" signature="1354:1454" ph="{...}" />
+            <marker date="1513693951441" expanded="true" signature="0:598" ph="/* Copyright 2017 The Nakama Authors ... */" />
+            <marker date="1513693951441" expanded="false" signature="607:685" ph="..." />
+            <marker date="1513693951441" expanded="true" signature="705:1563" ph="{...}" />
+            <marker date="1513693951441" expanded="true" signature="752:1561" ph="{...}" />
+            <marker date="1513693951441" expanded="true" signature="778:1016" ph="{...}" />
+            <marker date="1513693951441" expanded="true" signature="834:889" ph="{...}" />
+            <marker date="1513693951441" expanded="true" signature="949:1010" ph="{...}" />
+            <marker date="1513693951441" expanded="true" signature="1076:1205" ph="{...}" />
+            <marker date="1513693951441" expanded="true" signature="1279:1558" ph="{...}" />
+            <marker date="1513693951441" expanded="true" signature="1366:1466" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Framework/StateManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="22" column="10" lean-forward="false" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+          <folding>
+            <marker date="1513693628946" expanded="true" signature="0:598" ph="/* Copyright 2017 The Nakama Authors ... */" />
+            <marker date="1513693628946" expanded="false" signature="607:693" ph="..." />
+            <marker date="1513693628946" expanded="true" signature="714:845" ph="{...}" />
+            <marker date="1513693628946" expanded="true" signature="769:843" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Framework/NakamaManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1774">
+          <caret line="128" column="34" lean-forward="false" selection-start-line="128" selection-start-column="34" selection-end-line="128" selection-end-column="34" />
+          <folding>
+            <marker date="1513694278493" expanded="true" signature="0:598" ph="/* Copyright 2017 The Nakama Authors ... */" />
+            <marker date="1513694278493" expanded="false" signature="606:706" ph="..." />
+            <marker date="1513694278493" expanded="true" signature="727:5036" ph="{...}" />
+            <marker date="1513694278493" expanded="true" signature="784:5034" ph="{...}" />
+            <marker date="1513694278493" expanded="true" signature="1384:1474" ph="{...}" />
+            <marker date="1513694278493" expanded="true" signature="1840:2826" ph="{...}" />
+            <marker date="1513694278493" expanded="true" signature="2030:2392" ph="{...}" />
+            <marker date="1513694278493" expanded="true" signature="2128:2385" ph="{...}" />
+            <marker date="1513694278493" expanded="true" signature="2260:2377" ph="{...}" />
+            <marker date="1513694278493" expanded="true" signature="2427:2770" ph="{...}" />
+            <marker date="1513694278493" expanded="true" signature="2539:2627" ph="{...}" />
+            <marker date="1513694278493" expanded="true" signature="2636:2765" ph="{...}" />
+            <marker date="1513694278493" expanded="true" signature="2861:3150" ph="{...}" />
+            <marker date="1513694278493" expanded="true" signature="2869:3009" ph="/* if it's the first time disconnected, then attempt to reconnect immediately ... */" />
+            <marker date="1513694278493" expanded="true" signature="3177:3284" ph="{...}" />
+            <marker date="1513694278493" expanded="true" signature="3238:3280" ph="{...}" />
+            <marker date="1513694278493" expanded="true" signature="3322:3379" ph="{...}" />
+            <marker date="1513694278493" expanded="true" signature="3431:3709" ph="{...}" />
+            <marker date="1513694278493" expanded="true" signature="3452:3525" ph="{...}" />
+            <marker date="1513694278493" expanded="true" signature="3636:3705" ph="{...}" />
+            <marker date="1513694278493" expanded="true" signature="3715:3816" ph="/* This method connects the client to the server and ... */" />
+            <marker date="1513694278493" expanded="true" signature="3869:4514" ph="{...}" />
+            <marker date="1513694278493" expanded="true" signature="4000:4092" ph="{...}" />
+            <marker date="1513694278493" expanded="true" signature="4333:4508" ph="{...}" />
+            <marker date="1513694278493" expanded="true" signature="4382:4457" ph="{...}" />
+            <marker date="1513694278493" expanded="true" signature="4466:4503" ph="{...}" />
+            <marker date="1513694278493" expanded="true" signature="4520:4638" ph="/* Restore serialised session token from PlayerPrefs ... */" />
+            <marker date="1513694278493" expanded="true" signature="4682:5031" ph="{...}" />
+            <marker date="1513694278493" expanded="true" signature="4791:4864" ph="{...}" />
           </folding>
         </state>
       </provider>

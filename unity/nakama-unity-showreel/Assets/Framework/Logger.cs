@@ -19,11 +19,11 @@
 
 using UnityEngine;
 
-namespace Util
+namespace Framework
 {   
-    public class Logger
+    public static class Logger
     {
-             
+
         /// <summary>
         ///   <para>Logs message to the Unity Console.</para>
         /// </summary>
@@ -32,10 +32,11 @@ namespace Util
         public static void Log(object message)
         {
 #if LOG_OUTPUT && (DEVELOPMENT_BUILD || UNITY_EDITOR)
-          Debug.Log(message);
-        }
+            Debug.Log(message);
+
 #endif
-    
+        }
+
         /// <summary>
         ///   <para>Logs message to the Unity Console.</para>
         /// </summary>
