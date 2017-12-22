@@ -52,6 +52,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Framework\Logger.cs" />
+    <Compile Include="Assets\Framework\NakamaManager.cs" />
+    <Compile Include="Assets\Framework\Singleton.cs" />
+    <Compile Include="Assets\Framework\StateManager.cs" />
     <Compile Include="Assets\Nakama\Example\Matchmake.cs" />
     <Compile Include="Assets\Nakama\Example\UnityMainThreadDispatch.cs" />
     <Compile Include="Assets\Nakama\Example\UserChat.cs" />
@@ -181,10 +185,10 @@
     <Compile Include="Assets\Nakama\Plugins\Nakama\NUsersFetchMessage.cs" />
     <Compile Include="Assets\Nakama\Plugins\Nakama\Properties\AssemblyInfo.cs" />
     <Compile Include="Assets\Showreel\Authentication.cs" />
-    <Compile Include="Assets\Framework\Logger.cs" />
-    <Compile Include="Assets\Framework\NakamaManager.cs" />
-    <Compile Include="Assets\Framework\Singleton.cs" />
-    <Compile Include="Assets\Framework\StateManager.cs" />
+    <Compile Include="Assets\Showreel\FakeData.cs" />
+    <Compile Include="Assets\Showreel\MainSceneLoader.cs" />
+    <Compile Include="Assets\Showreel\SelectionMenu.cs" />
+    <Compile Include="Assets\Showreel\UserAccountView.cs" />
     <None Include="Assets\Nakama\Example\README.txt" />
     <Reference Include="UnityEngine.UI">
       <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

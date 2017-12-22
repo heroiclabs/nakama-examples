@@ -24,10 +24,10 @@ namespace Framework
 {
 	public class NakamaManager : Singleton<NakamaManager>
 	{
-		private const string HostIp = "127.0.0.1";
-		private const uint Port = 7350;
-		private const bool UseSsl = false;
-		private const string ServerKey = "defaultkey";
+		internal const string HostIp = "127.0.0.1";
+		internal const uint Port = 7350;
+		internal const bool UseSsl = false;
+		internal const string ServerKey = "defaultkey";
 		
 		private const int MaxReconnectAttempts = 5;
 		
@@ -53,9 +53,7 @@ namespace Framework
 		
 		private NakamaManager()
 		{
-			var builder = new NClient.Builder(ServerKey).Host(HostIp).Port(Port).Trace(true).SSL(UseSsl);
-			builder.Trace(true);
-			_client = builder.Build(); 
+			_client = new NClient.Builder(ServerKey).Host(HostIp).Port(Port).SSL(UseSsl).Build();
 	
 			_sessionHandler = session =>
 			{
@@ -98,6 +96,23 @@ namespace Framework
 			var reconnectTime = ((reconnectCount-1) + 10) * 60;  
 			yield return new WaitForSeconds(reconnectTime);
 			_sessionHandler(Session);
+		}
+		
+		// Restore serialised session token from PlayerPrefs
+		// If the token doesn't exist or is expired `null` is returned.
+		private static INSession RestoreSession()
+		{	
+			var cachedSession = PlayerPrefs.GetString("nk.session");
+			if (string.IsNullOrEmpty(cachedSession))
+			{
+				Logger.Log("No Session in PlayerPrefs.");
+				return null;
+			}
+
+			var session = NSession.Restore(cachedSession);
+			if (!session.HasExpired(DateTime.UtcNow)) return session;
+			Logger.Log("Session expired.");
+			return null;
 		}
 		
 		private void Update()
@@ -160,22 +175,18 @@ namespace Framework
 				}
 			});
 		}
-		
-		// Restore serialised session token from PlayerPrefs
-		// If the token doesn't exist or is expired `null` is returned.
-		private static INSession RestoreSession()
-		{	
-			var cachedSession = PlayerPrefs.GetString("nk.session");
-			if (string.IsNullOrEmpty(cachedSession))
-			{
-				Logger.Log("No Session in PlayerPrefs.");
-				return null;
-			}
 
-			var session = NSession.Restore(cachedSession);
-			if (!session.HasExpired(DateTime.UtcNow)) return session;
-			Logger.Log("Session expired.");
-			return null;
+		public void AddFriend(NFriendAddMessage message)
+		{
+			_client.Send(message, b => { }, ErrorHandler);
+		}
+
+		public void SelfFetch(NSelfFetchMessage message)
+		{
+			_client.Send(message, self =>
+			{
+				StateManager.Instance.SelfInfo = self;
+			}, ErrorHandler);
 		}
 	}
 }

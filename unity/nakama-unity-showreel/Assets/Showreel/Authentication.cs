@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-
 using Nakama;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Framework;
 
 namespace Showreel
-{
+{	
 	public class Authentication : MonoBehaviour
-	{
+	{	
 		private void Start()
 		{
 			NakamaManager.AfterConnected += (sender, evt) =>
 			{
-				SceneManager.LoadScene("UserInfoScene");
+				FakeData.init();
+				SceneManager.LoadScene("SelectionMenuScene");
 			};
 			
 			NakamaManager.AfterDisconnected += (sender, evt) =>
@@ -38,10 +38,15 @@ namespace Showreel
 		}
 
 		// Invoked by the UI 
-		public static void PlayAsGuest()
+		public void PlayAsGuest()
 		{
 			INAuthenticateMessage authMessage = BuildDeviceAuthenticateMessage();
 			NakamaManager.Instance.Connect(authMessage);
+		}
+
+		public void LinkWithFacebook()
+		{
+			
 		}
 		
 		private static NAuthenticateMessage BuildDeviceAuthenticateMessage()

@@ -14,17 +14,39 @@
  * limitations under the License.
  */
 
-
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using Framework;
 using Nakama;
 using UnityEngine;
+using UnityEngine.UI;
 
-namespace Framework
+namespace Showreel
 {
-	public class StateManager : Singleton<StateManager>
+	public class UserAccountView : MonoBehaviour
 	{
-		public INSelf SelfInfo { get; internal set; }
+		public Text SelfInfoText;
+		
+		private void Start()
+		{
+			SelfInfoText = GameObject.Find("SelfInfoText").GetComponent<Text>();
+			
+			NakamaManager.Instance.SelfFetch(NSelfFetchMessage.Default());
+		}
+
+		private void Update()
+		{
+			var self = StateManager.Instance.SelfInfo;
+			if (self == null)
+			{
+				return;
+			}
+
+			var selfText = string.Format(@"
+Id: {0}\n
+Handle: {1}\n
+Fullname: {2}\n
+Device ID: {3}
+			", self.Id, self.Handle, self.Fullname, self.DeviceIds[0]);
+			SelfInfoText.text = selfText;
+		}
 	}
 }
