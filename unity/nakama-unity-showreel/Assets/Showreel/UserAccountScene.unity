@@ -376,6 +376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38fc6e9995719410abf7d7c71b8d8b37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SelfInfoText: {fileID: 0}
 --- !u!1 &1933999296
 GameObject:
   m_ObjectHideFlags: 0
@@ -503,7 +504,7 @@ MonoBehaviour:
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: Fetch account information...
 --- !u!222 &2084961663
