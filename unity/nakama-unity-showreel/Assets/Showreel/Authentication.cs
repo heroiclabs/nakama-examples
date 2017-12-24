@@ -22,19 +22,12 @@ using Framework;
 namespace Showreel
 {	
 	public class Authentication : MonoBehaviour
-	{
-		private bool _initializedFakeData = false;
-		
+	{	
 		private void Start()
 		{
 			NakamaManager.AfterConnected += (sender, evt) =>
 			{
-				if (!_initializedFakeData)
-				{
-					FakeData.init();
-					_initializedFakeData = true;
-				}
-				
+				FakeData.init();
 				SceneManager.LoadScene("SelectionMenuScene");
 			};
 			
@@ -51,7 +44,7 @@ namespace Showreel
 			NakamaManager.Instance.Connect(authMessage);
 		}
 
-		public void LinkViaFacebook()
+		public void LinkWithFacebook()
 		{
 			
 		}

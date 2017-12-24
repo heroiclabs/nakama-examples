@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-using System;
 using Framework;
+using Nakama;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Showreel
 {
-	public class UserAccount : MonoBehaviour
+	public class UserAccountView : MonoBehaviour
 	{
 		public Text SelfInfoText;
 		
@@ -29,7 +29,7 @@ namespace Showreel
 		{
 			SelfInfoText = GameObject.Find("SelfInfoText").GetComponent<Text>();
 			
-			NakamaManager.Instance.SelfFetch();
+			NakamaManager.Instance.SelfFetch(NSelfFetchMessage.Default());
 		}
 
 		private void Update()

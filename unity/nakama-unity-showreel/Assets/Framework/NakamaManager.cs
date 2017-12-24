@@ -176,15 +176,14 @@ namespace Framework
 			});
 		}
 
-		public void AddFriend(string userId)
+		public void AddFriend(NFriendAddMessage message)
 		{
-			var friendAddMessage = NFriendAddMessage.ById(userId);
-			_client.Send(friendAddMessage, b => { }, ErrorHandler);
+			_client.Send(message, b => { }, ErrorHandler);
 		}
 
-		public void SelfFetch()
+		public void SelfFetch(NSelfFetchMessage message)
 		{
-			_client.Send(NSelfFetchMessage.Default(), self =>
+			_client.Send(message, self =>
 			{
 				StateManager.Instance.SelfInfo = self;
 			}, ErrorHandler);

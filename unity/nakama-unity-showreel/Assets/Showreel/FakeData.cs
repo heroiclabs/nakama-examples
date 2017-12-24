@@ -15,26 +15,37 @@
  */
 
 using System;
+using Framework;
 using Nakama;
 
-namespace Framework
+namespace Showreel
 {
     // This is only needed for Demo purposes.
     // You can ignore this class entirely.
     public static class FakeData
     {
-        private static readonly NClient _client = new NClient.Builder(NakamaManager.ServerKey).Host(NakamaManager.HostIp).Port(NakamaManager.Port).SSL(NakamaManager.UseSsl).Build();
+        private static bool _initializedFakeData = false;
         private static readonly Action<INError> _errorHandler = err =>
         {
             Logger.LogErrorFormat("Error: code '{0}' with '{1}'.", err.Code, err.Message);
         };
+        private static readonly NClient _client = new NClient.Builder(NakamaManager.ServerKey)
+            .Host(NakamaManager.HostIp)
+            .Port(NakamaManager.Port)
+            .SSL(NakamaManager.UseSsl)
+            .Build();
 
         private static INSession user1Session, user2Session, user3Session;
         
         // This initializes the server with fake data so that views are not empty when loaded.
         // This assumes that the current user is connected to the system.
         public static void init()
-        { 
+        {
+            if (_initializedFakeData)
+            {
+                return;
+            }
+            
             _client.Register(buildAuthenticationMessage(), session =>
             {
                 user1Session = session;
@@ -57,6 +68,7 @@ namespace Framework
                                     _client.Disconnect();
                 
                                     setupMainUser();
+                                    _initializedFakeData = true;
                                 });
                             }, _errorHandler);
                         });   
@@ -86,8 +98,8 @@ namespace Framework
         private static void setupMainUser()
         {
             // let's add two users as friends
-            NakamaManager.Instance.AddFriend(user1Session.Id);
-            NakamaManager.Instance.AddFriend(user2Session.Id);
+            NakamaManager.Instance.AddFriend(NFriendAddMessage.ById(user1Session.Id));
+            NakamaManager.Instance.AddFriend(NFriendAddMessage.ById(user2Session.Id));
             
             var builder = new NGroupCreateMessage.Builder("School friends");
             builder.Description("Weekend getaway");
