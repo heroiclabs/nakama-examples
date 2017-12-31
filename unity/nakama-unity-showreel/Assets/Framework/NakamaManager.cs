@@ -176,16 +176,39 @@ namespace Framework
 			});
 		}
 
-		public void AddFriend(NFriendAddMessage message)
-		{
-			_client.Send(message, b => { }, ErrorHandler);
-		}
-
 		public void SelfFetch(NSelfFetchMessage message)
 		{
 			_client.Send(message, self =>
 			{
 				StateManager.Instance.SelfInfo = self;
+			}, ErrorHandler);
+		}
+		
+		public void FriendAdd(NFriendAddMessage message, bool refreshList=true)
+		{
+			_client.Send(message, done =>
+			{
+				if (refreshList)
+				{
+					FriendsList(NFriendsListMessage.Default());
+				}
+			}, ErrorHandler);
+		}
+		
+		public void FriendRemove(NFriendRemoveMessage message)
+		{
+			_client.Send(message, done =>
+			{
+				FriendsList(NFriendsListMessage.Default());
+			}, ErrorHandler);
+		}
+		
+		public void FriendsList(NFriendsListMessage message)
+		{
+			_client.Send(message, friends =>
+			{
+				StateManager.Instance.Friends.Clear();
+				StateManager.Instance.Friends.AddRange(friends.Results);
 			}, ErrorHandler);
 		}
 	}

@@ -23,11 +23,11 @@ namespace Showreel
 {
 	public class UserAccountView : MonoBehaviour
 	{
-		public Text SelfInfoText;
+		private Text _selfInfoText;
 		
 		private void Start()
 		{
-			SelfInfoText = GameObject.Find("SelfInfoText").GetComponent<Text>();
+			_selfInfoText = GameObject.Find("SelfInfoText").GetComponent<Text>();
 			
 			NakamaManager.Instance.SelfFetch(NSelfFetchMessage.Default());
 		}
@@ -41,12 +41,12 @@ namespace Showreel
 			}
 
 			var selfText = string.Format(@"
-Id: {0}\n
-Handle: {1}\n
-Fullname: {2}\n
+Id: {0}
+Handle: {1}
+Fullname: {2}
 Device ID: {3}
 			", self.Id, self.Handle, self.Fullname, self.DeviceIds[0]);
-			SelfInfoText.text = selfText;
+			_selfInfoText.text = selfText;
 		}
 	}
 }

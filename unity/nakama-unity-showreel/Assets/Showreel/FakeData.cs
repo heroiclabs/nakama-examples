@@ -98,8 +98,8 @@ namespace Showreel
         private static void setupMainUser()
         {
             // let's add two users as friends
-            NakamaManager.Instance.AddFriend(NFriendAddMessage.ById(user1Session.Id));
-            NakamaManager.Instance.AddFriend(NFriendAddMessage.ById(user2Session.Id));
+            NakamaManager.Instance.FriendAdd(NFriendAddMessage.ById(user1Session.Id), false);
+            NakamaManager.Instance.FriendAdd(NFriendAddMessage.ById(user2Session.Id), false);
             
             var builder = new NGroupCreateMessage.Builder("School friends");
             builder.Description("Weekend getaway");

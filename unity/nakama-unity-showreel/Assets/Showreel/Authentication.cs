@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+using System;
 using Nakama;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -33,7 +34,11 @@ namespace Showreel
 			
 			NakamaManager.AfterDisconnected += (sender, evt) =>
 			{
-				SceneManager.LoadScene("AuthenticationScene");
+				// if session has expired, load the authentication scene
+				if (NakamaManager.Instance.Session.HasExpired(DateTime.Now))
+				{
+					SceneManager.LoadScene("AuthenticationScene");	
+				}
 			};	
 		}
 
