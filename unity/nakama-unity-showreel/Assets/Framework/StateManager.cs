@@ -26,5 +26,6 @@ namespace Framework
 	public class StateManager : Singleton<StateManager>
 	{
 		public INSelf SelfInfo { get; internal set; }
+		public List<INFriend> Friends = new List<INFriend>();
 	}
 }
