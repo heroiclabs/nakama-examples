@@ -186,7 +186,7 @@ namespace Framework
 		
 		public void FriendAdd(NFriendAddMessage message, bool refreshList=true)
 		{
-			_client.Send(message, b =>
+			_client.Send(message, done =>
 			{
 				if (refreshList)
 				{
@@ -197,7 +197,7 @@ namespace Framework
 		
 		public void FriendRemove(NFriendRemoveMessage message)
 		{
-			_client.Send(message, b =>
+			_client.Send(message, done =>
 			{
 				FriendsList(NFriendsListMessage.Default());
 			}, ErrorHandler);
@@ -208,9 +208,7 @@ namespace Framework
 			_client.Send(message, friends =>
 			{
 				StateManager.Instance.Friends.Clear();
-				for (var i = 0; i < friends.Results.Count; i++) {
-					StateManager.Instance.Friends.Add(friends.Results[i]);
-				}
+				StateManager.Instance.Friends.AddRange(friends.Results);
 			}, ErrorHandler);
 		}
 	}
