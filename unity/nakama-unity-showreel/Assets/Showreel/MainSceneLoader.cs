@@ -22,17 +22,18 @@ using UnityEngine.SceneManagement;
 namespace Showreel
 {
     // This will load the Authentication Scene whenever the Showreel has started in Unity Editor.
-    
+
     [InitializeOnLoad]
     public class MainSceneLoader : EditorWindow
     {
         private const string cEditorPrefPreviousScene = "MainSceneLoader.PreviousScene";
-        
+
         private const string SceneFolder = "Assets/Showreel/";
         private const string SceneExtension = ".unity";
         private const string MasterScene = "AuthenticationScene";
-        
+
         private static string _previousScene;
+
         private static string PreviousScene
         {
             get { return EditorPrefs.GetString(cEditorPrefPreviousScene, _previousScene); }
@@ -50,26 +51,34 @@ namespace Showreel
 
         private static void OnPlayModeChanged()
         {
-            if (!EditorApplication.isPlaying && EditorApplication.isPlayingOrWillChangePlaymode) {
+            if (!EditorApplication.isPlaying && EditorApplication.isPlayingOrWillChangePlaymode)
+            {
                 PreviousScene = SceneManager.GetActiveScene().name;
-                
+
                 // User pressed play -- autoload master scene.
-                if (EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo()) {                   
+                if (EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
+                {
                     EditorSceneManager.OpenScene(SceneFolder + MasterScene + SceneExtension, OpenSceneMode.Single);
-                } else {
+                }
+                else
+                {
                     EditorApplication.isPlaying = false;
                 }
             }
-            if (!EditorApplication.isPlaying && !EditorApplication.isPlayingOrWillChangePlaymode) {
+            if (!EditorApplication.isPlaying && !EditorApplication.isPlayingOrWillChangePlaymode)
+            {
                 // User pressed stop -- reload previous scene.
-                if (PreviousScene != MasterScene) {
+                if (PreviousScene != MasterScene)
+                {
                     EditorApplication.update += ReloadLastScene;
-                }                
+                }
             }
         }
-        
-        private static void ReloadLastScene() {
-            if (SceneManager.GetActiveScene().name != PreviousScene) {
+
+        private static void ReloadLastScene()
+        {
+            if (SceneManager.GetActiveScene().name != PreviousScene)
+            {
                 EditorSceneManager.OpenScene(SceneFolder + PreviousScene + SceneExtension, OpenSceneMode.Single);
             }
             EditorApplication.update -= ReloadLastScene;

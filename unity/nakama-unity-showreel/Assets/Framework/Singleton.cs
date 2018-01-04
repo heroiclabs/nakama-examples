@@ -21,7 +21,6 @@ namespace Framework
 {
     public abstract class Singleton<T> : MonoBehaviour where T : Component
     {
-	
         /// <summary>
         /// The instance.
         /// </summary>
@@ -35,14 +34,14 @@ namespace Framework
         {
             get
             {
-                if ( instance == null )
+                if (instance == null)
                 {
-                    instance = FindObjectOfType<T> ();
-                    if ( instance == null )
+                    instance = FindObjectOfType<T>();
+                    if (instance == null)
                     {
-                        GameObject obj = new GameObject ();
-                        obj.name = typeof ( T ).Name;
-                        instance = obj.AddComponent<T> ();
+                        GameObject obj = new GameObject();
+                        obj.name = typeof(T).Name;
+                        instance = obj.AddComponent<T>();
                     }
                 }
                 return instance;
@@ -52,16 +51,16 @@ namespace Framework
         /// <summary>
         /// Use this for initialization.
         /// </summary>
-        protected virtual void Awake ()
+        protected virtual void Awake()
         {
-            if ( instance == null )
+            if (instance == null)
             {
                 instance = this as T;
-                DontDestroyOnLoad ( gameObject );
+                DontDestroyOnLoad(gameObject);
             }
             else
             {
-                Destroy ( gameObject );
+                Destroy(gameObject);
             }
         }
     }

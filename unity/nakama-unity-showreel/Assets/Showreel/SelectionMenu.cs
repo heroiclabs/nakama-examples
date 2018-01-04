@@ -20,27 +20,32 @@ using UnityEngine.SceneManagement;
 namespace Showreel
 {
     public class SelectionMenu : MonoBehaviour
-    {   
+    {
         public void ShowUserAccountScene()
         {
             SceneManager.LoadScene("UserAccountScene");
         }
-        
+
         public void ShowFriendsScene()
         {
             SceneManager.LoadScene("FriendsScene");
         }
-        
+
         public void ShowGroupsScene()
         {
             SceneManager.LoadScene("GroupsScene");
         }
-        
-        public void ShowChatScene()
+
+        public void ShowChatFriendScene()
         {
-            SceneManager.LoadScene("ChatScene");
+            SceneManager.LoadScene("ChatFriendScene");
         }
-        
+
+        public void ShowChatRoomScene()
+        {
+            SceneManager.LoadScene("ChatRoomScene");
+        }
+
         public void ShowNotificationScene()
         {
             SceneManager.LoadScene("NotificationsScene");

@@ -15,55 +15,54 @@
  */
 
 using System;
+using Framework;
 using Nakama;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Framework;
 
 namespace Showreel
-{	
-	public class Authentication : MonoBehaviour
-	{	
-		private void Start()
-		{
-			NakamaManager.AfterConnected += (sender, evt) =>
-			{
-				FakeData.init();
-				SceneManager.LoadScene("SelectionMenuScene");
-			};
-			
-			NakamaManager.AfterDisconnected += (sender, evt) =>
-			{
-				// if session has expired, load the authentication scene
-				if (NakamaManager.Instance.Session.HasExpired(DateTime.Now))
-				{
-					SceneManager.LoadScene("AuthenticationScene");	
-				}
-			};	
-		}
+{
+    public class Authentication : MonoBehaviour
+    {
+        private void Start()
+        {
+            NakamaManager.AfterConnected += (sender, evt) =>
+            {
+                FakeData.Init();
+                SceneManager.LoadScene("SelectionMenuScene");
+            };
 
-		// Invoked by the UI 
-		public void PlayAsGuest()
-		{
-			INAuthenticateMessage authMessage = BuildDeviceAuthenticateMessage();
-			NakamaManager.Instance.Connect(authMessage);
-		}
+            NakamaManager.AfterDisconnected += (sender, evt) =>
+            {
+                // if session has expired, load the authentication scene
+                if (NakamaManager.Instance.Session.HasExpired(DateTime.Now))
+                {
+                    SceneManager.LoadScene("AuthenticationScene");
+                }
+            };
+        }
 
-		public void LinkWithFacebook()
-		{
-			
-		}
-		
-		private static NAuthenticateMessage BuildDeviceAuthenticateMessage()
-		{
-			var id = PlayerPrefs.GetString("nk.deviceid");
-			if (string.IsNullOrEmpty(id))
-			{
-				id = SystemInfo.deviceUniqueIdentifier;
-				PlayerPrefs.SetString("nk.deviceid", id);
-			}
-			Debug.LogFormat("Device Id: '{0}'.", id);
-			return NAuthenticateMessage.Device(id);
-		}
-	}
+        // Invoked by the UI 
+        public void PlayAsGuest()
+        {
+            INAuthenticateMessage authMessage = BuildDeviceAuthenticateMessage();
+            NakamaManager.Instance.Connect(authMessage);
+        }
+
+        public void LinkWithFacebook()
+        {
+        }
+
+        private static NAuthenticateMessage BuildDeviceAuthenticateMessage()
+        {
+            var id = PlayerPrefs.GetString("nk.deviceid");
+            if (string.IsNullOrEmpty(id))
+            {
+                id = SystemInfo.deviceUniqueIdentifier;
+                PlayerPrefs.SetString("nk.deviceid", id);
+            }
+            Debug.LogFormat("Device Id: '{0}'.", id);
+            return NAuthenticateMessage.Device(id);
+        }
+    }
 }
