@@ -27,5 +27,7 @@ namespace Framework
 	{
 		public INSelf SelfInfo { get; internal set; }
 		public List<INFriend> Friends = new List<INFriend>();
+		public List<INGroup> SearchedGroups = new List<INGroup>();
+		public List<INGroupSelf> JoinedGroups = new List<INGroupSelf>();
 	}
 }

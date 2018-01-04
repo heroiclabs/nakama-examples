@@ -17,3 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Showreel/FriendsScene.unity
     guid: 8e26eb5829ed341fe85ec3db54c4df01
+  - enabled: 1
+    path: Assets/Showreel/GroupsScene.unity
+    guid: 9b95afe1899e44984ac25aa8a807e705

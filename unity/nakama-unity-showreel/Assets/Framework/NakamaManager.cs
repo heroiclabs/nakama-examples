@@ -46,8 +46,8 @@ namespace Framework
 		private INAuthenticateMessage _authenticateMessage;
 		
 		// Flag to tell us whether the socket was closed intentially or not and whether to attempt reconnect.
-		private bool doReconnect = true;
-		private uint reconnectCount = 0;
+		private bool _doReconnect = true;
+		private uint _reconnectCount = 0;
 
 		public INSession Session { get; private set; }
 		
@@ -61,7 +61,7 @@ namespace Framework
 				_client.Connect(session, done =>
 				{
 					Session = session;
-					reconnectCount = 0;
+					_reconnectCount = 0;
 					// cache session for quick reconnects
 					_dispatchQueue.Enqueue(() =>
 					{
@@ -74,9 +74,9 @@ namespace Framework
 			_client.OnDisconnect = evt =>
 			{
 				Logger.Log("Disconnected from server.");
-				if (doReconnect && reconnectCount < MaxReconnectAttempts)
+				if (_doReconnect && _reconnectCount < MaxReconnectAttempts)
 				{
-					reconnectCount++;
+					_reconnectCount++;
 					_dispatchQueue.Enqueue(() => { Reconnect(); });
 				}
 				else
@@ -93,7 +93,7 @@ namespace Framework
 		{
 			// if it's the first time disconnected, then attempt to reconnect immediately
 			// every other time, wait 10,20,30,40,50 seconds each time 
-			var reconnectTime = ((reconnectCount-1) + 10) * 60;  
+			var reconnectTime = ((_reconnectCount-1) + 10) * 60;  
 			yield return new WaitForSeconds(reconnectTime);
 			_sessionHandler(Session);
 		}
@@ -125,7 +125,7 @@ namespace Framework
 		
 		private void OnApplicationQuit()
 		{
-			doReconnect = false;
+			_doReconnect = false;
 			_client.Disconnect();
 		}
 		
@@ -133,7 +133,7 @@ namespace Framework
 		{
 			if (isPaused)
 			{
-				doReconnect = false;
+				_doReconnect = false;
 				_client.Disconnect();
 				return;
 			}
@@ -141,7 +141,7 @@ namespace Framework
 			// let's re-authenticate (if neccessary) and reconnect to the server.
 			if (_authenticateMessage != null)
 			{
-				doReconnect = true;
+				_doReconnect = true;
 				Connect(_authenticateMessage);
 			}
 		}
@@ -210,6 +210,50 @@ namespace Framework
 				StateManager.Instance.Friends.Clear();
 				StateManager.Instance.Friends.AddRange(friends.Results);
 			}, ErrorHandler);
+		}
+		
+		public void GroupsList(NGroupsListMessage.Builder message, bool appendList=false)
+		{
+			_client.Send(message.Build(), groups =>
+			{
+				if (!appendList)
+				{
+					StateManager.Instance.SearchedGroups.Clear();
+				}
+				StateManager.Instance.SearchedGroups.AddRange(groups.Results);
+
+				// Recursively fetch the next set of groups and append
+				if (groups.Cursor != null && groups.Cursor.Value != "")
+				{
+					message.Cursor(groups.Cursor);
+					GroupsList(message, true);
+				}
+			}, ErrorHandler);
+		}
+		
+		public void GroupJoin(NGroupJoinMessage message, bool refreshList=true)
+		{
+			_client.Send(message, done =>
+			{
+				if (refreshList)
+				{
+					JoinedGroupsList(NGroupsSelfListMessage.Default());
+				}
+			}, ErrorHandler);
+		}
+		
+		public void JoinedGroupsList(NGroupsSelfListMessage message)
+		{
+			_client.Send(message, groups =>
+			{
+				StateManager.Instance.JoinedGroups.Clear();
+				StateManager.Instance.JoinedGroups.AddRange(groups.Results);
+			}, ErrorHandler);
+		}
+		
+		public void GroupCreate(NGroupCreateMessage message)
+		{
+			_client.Send(message, groups => {}, ErrorHandler);
 		}
 	}
 }
