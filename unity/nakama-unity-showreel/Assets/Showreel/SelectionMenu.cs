@@ -36,9 +36,14 @@ namespace Showreel
             SceneManager.LoadScene("GroupsScene");
         }
         
-        public void ShowChatScene()
+        public void ShowChatFriendScene()
         {
-            SceneManager.LoadScene("ChatScene");
+            SceneManager.LoadScene("ChatFriendScene");
+        }
+        
+        public void ShowChatRoomScene()
+        {
+            SceneManager.LoadScene("ChatRoomScene");
         }
         
         public void ShowNotificationScene()

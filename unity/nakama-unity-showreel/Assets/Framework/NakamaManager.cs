@@ -18,6 +18,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Nakama;
+using UnityEditor.VersionControl;
 using UnityEngine;
 
 namespace Framework
@@ -39,21 +40,36 @@ namespace Framework
 		public static event EventHandler AfterDisconnected = (sender, evt) => { };
 		private static readonly Action<INError> ErrorHandler = err =>
 		{
+			if (err.Code == ErrorCode.GroupNameInuse)
+			{
+				// This is caused by the FakeDataLoader and is expected. We can ignore this safely in this case.
+				return;
+			}
 			Logger.LogErrorFormat("Error: code '{0}' with '{1}'.", err.Code, err.Message);
 		};
 
-		//TODO(mo): Facebook/Google Login with token expiry
 		private INAuthenticateMessage _authenticateMessage;
 		
 		// Flag to tell us whether the socket was closed intentially or not and whether to attempt reconnect.
 		private bool _doReconnect = true;
-		private uint _reconnectCount = 0;
+		private uint _reconnectCount;
 
 		public INSession Session { get; private set; }
 		
 		private NakamaManager()
 		{
 			_client = new NClient.Builder(ServerKey).Host(HostIp).Port(Port).SSL(UseSsl).Build();
+			_client.OnTopicMessage = message =>
+			{
+				var chatMessage = StateManager.Instance.ChatMessages;
+				foreach (var topic in chatMessage.Keys)
+				{
+					if (topic.Id.Equals(message.Topic.Id))
+					{
+						chatMessage[topic].Add(message.MessageId, message);		
+					}
+				}
+			};
 	
 			_sessionHandler = session =>
 			{
@@ -255,5 +271,45 @@ namespace Framework
 		{
 			_client.Send(message, groups => {}, ErrorHandler);
 		}
+		
+		public void TopicJoin(string userIdOrRoom, NTopicJoinMessage message)
+		{
+			_client.Send(message, topics =>
+			{
+				var topic = topics.Results[0];
+				StateManager.Instance.Topics.Add(userIdOrRoom, topic.Topic);
+				StateManager.Instance.ChatMessages.Add(topic.Topic, new Dictionary<string, INTopicMessage>());
+			}, ErrorHandler);
+		}
+
+		public void TopicMessageList(string userIdOrRoom, NTopicMessagesListMessage.Builder message, bool appendList=false)
+		{
+			_client.Send(message.Build(), messages =>
+			{
+				var topic = StateManager.Instance.Topics[userIdOrRoom];
+				if (!appendList)
+				{
+					StateManager.Instance.ChatMessages[topic].Clear();
+				}
+
+				foreach (var chatMessage in messages.Results)
+				{
+					StateManager.Instance.ChatMessages[topic].Add(chatMessage.MessageId, chatMessage);
+				}
+
+				// Recursively fetch the next set of groups and append
+				if (messages.Cursor != null && messages.Cursor.Value != "")
+				{
+					message.Cursor(messages.Cursor);
+					TopicMessageList(userIdOrRoom, message, true);
+				}
+			}, ErrorHandler);
+		}
+		
+		public void TopicSendMessage(NTopicMessageSendMessage message)
+		{
+			_client.Send(message, acks => {}, ErrorHandler);	
+		}
+
 	}
 }
