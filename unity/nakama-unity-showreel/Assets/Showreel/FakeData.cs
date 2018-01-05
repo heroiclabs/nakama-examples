@@ -25,10 +25,12 @@ namespace Showreel
     public static class FakeData
     {
         private static bool _initializedFakeData = false;
+
         private static readonly Action<INError> ErrorHandler = err =>
         {
             Logger.LogErrorFormat("Error: code '{0}' with '{1}'.", err.Code, err.Message);
         };
+
         private static readonly NClient Client = new NClient.Builder(NakamaManager.ServerKey)
             .Host(NakamaManager.HostIp)
             .Port(NakamaManager.Port)
@@ -36,7 +38,7 @@ namespace Showreel
             .Build();
 
         private static INSession _user1Session, _user2Session, _user3Session;
-        
+
         // This initializes the server with fake data so that views are not empty when loaded.
         // This assumes that the current user is connected to the system.
         public static void Init()
@@ -45,33 +47,36 @@ namespace Showreel
             {
                 return;
             }
-            
+
             Client.Register(BuildAuthenticationMessage(), session =>
             {
                 _user1Session = session;
-                Client.Connect(_user1Session, c => {
+                Client.Connect(_user1Session, c =>
+                {
                     SetupUser1();
                     Client.Disconnect();
-                    
+
                     Client.Register(BuildAuthenticationMessage(), session2 =>
                     {
                         _user2Session = session2;
-                        Client.Connect(_user2Session, c2 => {
+                        Client.Connect(_user2Session, c2 =>
+                        {
                             SetupUser2();
                             Client.Disconnect();
-                            
+
                             Client.Register(BuildAuthenticationMessage(), session3 =>
                             {
                                 _user3Session = session3;
-                                Client.Connect(_user3Session, c3 => {
+                                Client.Connect(_user3Session, c3 =>
+                                {
                                     SetupUser3();
                                     Client.Disconnect();
-                
+
                                     SetupMainUser();
                                     _initializedFakeData = true;
                                 });
                             }, ErrorHandler);
-                        });   
+                        });
                     }, ErrorHandler);
                 });
             }, ErrorHandler);
@@ -80,13 +85,13 @@ namespace Showreel
         private static void SetupUser1()
         {
             Client.Send(NFriendAddMessage.ById(NakamaManager.Instance.Session.Id), b => { }, ErrorHandler);
-            
+
             var builder = new NGroupCreateMessage.Builder("Thanksgiving");
             builder.Description("Turkey eating at my house!");
             builder.Lang("en");
             Client.Send(builder.Build(), b => { }, ErrorHandler);
         }
-        
+
         private static void SetupUser2()
         {
             var builder = new NGroupCreateMessage.Builder("House Party");
@@ -94,27 +99,27 @@ namespace Showreel
             builder.Lang("en");
             Client.Send(builder.Build(), b => { }, ErrorHandler); // don't care about the response.
         }
-        
+
         private static void SetupUser3()
         {
             Client.Send(NFriendAddMessage.ById(NakamaManager.Instance.Session.Id), b => { }, ErrorHandler);
         }
-        
+
         private static void SetupMainUser()
         {
             // let's add two users as friends
             NakamaManager.Instance.FriendAdd(NFriendAddMessage.ById(_user1Session.Id), false);
             NakamaManager.Instance.FriendAdd(NFriendAddMessage.ById(_user2Session.Id), false);
-            
+
             var builder = new NGroupCreateMessage.Builder("School friends");
             builder.Description("Weekend getaway");
             builder.Lang("en");
             NakamaManager.Instance.GroupCreate(builder.Build());
-            
+
             builder = new NGroupCreateMessage.Builder("Iranian friends");
             builder.Description("Loving groups of Farsi speaking friends!");
             builder.Lang("fa");
-            NakamaManager.Instance.GroupCreate(builder.Build());   
+            NakamaManager.Instance.GroupCreate(builder.Build());
         }
 
         private static INAuthenticateMessage BuildAuthenticationMessage()

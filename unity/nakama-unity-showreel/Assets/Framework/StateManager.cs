@@ -14,35 +14,34 @@
  * limitations under the License.
  */
 
-
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using Nakama;
 
 namespace Framework
 {
-	public class StateManager : Singleton<StateManager>
-	{
-		public INSelf SelfInfo { get; internal set; }
-		public List<INFriend> Friends = new List<INFriend>();
-		public List<INGroup> SearchedGroups = new List<INGroup>();
-		public List<INGroupSelf> JoinedGroups = new List<INGroupSelf>();
-		
-		// Map of User ID/Room Name to <TopicId, List of messages> for Chat Message
-		public Dictionary<string, INTopicId> Topics = new Dictionary<string, INTopicId>();
-		public Dictionary<INTopicId, Dictionary<string,INTopicMessage>> ChatMessages = new Dictionary<INTopicId, Dictionary<string,INTopicMessage>>();
-	}
-	
-	public class ByMessageCreatedAt : IComparer<INTopicMessage>
+    public class StateManager : Singleton<StateManager>
+    {
+        public INSelf SelfInfo { get; internal set; }
+        public List<INFriend> Friends = new List<INFriend>();
+        public List<INGroup> SearchedGroups = new List<INGroup>();
+        public List<INGroupSelf> JoinedGroups = new List<INGroupSelf>();
+
+        // Map of User ID/Room Name to <TopicId, List of messages> for Chat Message
+        public Dictionary<string, INTopicId> Topics = new Dictionary<string, INTopicId>();
+
+        public Dictionary<INTopicId, Dictionary<string, INTopicMessage>> ChatMessages =
+            new Dictionary<INTopicId, Dictionary<string, INTopicMessage>>();
+    }
+
+    public class ByMessageCreatedAt : IComparer<INTopicMessage>
     {
         public int Compare(INTopicMessage x, INTopicMessage y)
         {
             if (x == null || y == null)
             {
                 return 0;
-            } 
-            
+            }
+
             return y.CreatedAt.CompareTo(x.CreatedAt) != 0 ? y.CreatedAt.CompareTo(x.CreatedAt) : 0;
         }
     }

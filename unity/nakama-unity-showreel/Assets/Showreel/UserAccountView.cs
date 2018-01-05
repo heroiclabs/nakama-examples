@@ -21,32 +21,32 @@ using UnityEngine.UI;
 
 namespace Showreel
 {
-	public class UserAccountView : MonoBehaviour
-	{
-		private Text _selfInfoText;
-		
-		private void Start()
-		{
-			_selfInfoText = GameObject.Find("SelfInfoText").GetComponent<Text>();
-			
-			NakamaManager.Instance.SelfFetch(NSelfFetchMessage.Default());
-		}
+    public class UserAccountView : MonoBehaviour
+    {
+        private Text _selfInfoText;
 
-		private void Update()
-		{
-			var self = StateManager.Instance.SelfInfo;
-			if (self == null)
-			{
-				return;
-			}
+        private void Start()
+        {
+            _selfInfoText = GameObject.Find("SelfInfoText").GetComponent<Text>();
 
-			var selfText = string.Format(@"
+            NakamaManager.Instance.SelfFetch(NSelfFetchMessage.Default());
+        }
+
+        private void Update()
+        {
+            var self = StateManager.Instance.SelfInfo;
+            if (self == null)
+            {
+                return;
+            }
+
+            var selfText = string.Format(@"
 Id: {0}
 Handle: {1}
 Fullname: {2}
 Device ID: {3}
 			", self.Id, self.Handle, self.Fullname, self.DeviceIds[0]);
-			_selfInfoText.text = selfText;
-		}
-	}
+            _selfInfoText.text = selfText;
+        }
+    }
 }

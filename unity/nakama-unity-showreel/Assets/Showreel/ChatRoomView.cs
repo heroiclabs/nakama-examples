@@ -19,90 +19,90 @@ using Framework;
 using Nakama;
 using UnityEngine;
 using UnityEngine.UI;
-using Button = UnityEngine.UI.Button;
 
-namespace Showreel {
-	public class ChatRoomView : MonoBehaviour
-	{
-		private Text _chatMessageLabel;
-		private Button _sendMessageButton;
-		private InputField _inputField;
-		private Text _topicLabel;
+namespace Showreel
+{
+    public class ChatRoomView : MonoBehaviour
+    {
+        private Text _chatMessageLabel;
+        private Button _sendMessageButton;
+        private InputField _inputField;
+        private Text _topicLabel;
 
-		private const string RoomName = "showreel-room"; 
-		
-		// this is used to keep track of rendered messages for that user  
-		private int _renderedMessages = 0; 
-		
-		private void Start ()
-		{
-			_chatMessageLabel = GameObject.Find("ChatMessageLabel").GetComponent<Text>();
-			_sendMessageButton = GameObject.Find("SendMessageButton").GetComponent<Button>();
-			_inputField = GameObject.Find("InputField").GetComponent<InputField>();
-			_topicLabel = GameObject.Find("TopicLabel").GetComponent<Text>();
-			_topicLabel.text = RoomName;
-			
-			_sendMessageButton.interactable = false;
+        private const string RoomName = "showreel-room";
 
-			JoinRoomTopic();
-			FetchHistoricMessages();
-		}
-		
-		private void Update ()
-		{
-			if (!StateManager.Instance.Topics.ContainsKey(RoomName))
-			{
-				// we've not subscribed to the topic yet - let's ignore rendering anything.
-				return;
-			} 
-			
-			// if the number of rendered messages is the same as messages we have, we don't need to re-render.
-			var topic = StateManager.Instance.Topics[RoomName];
-			var roomMessages = StateManager.Instance.ChatMessages[topic];
-			if (_renderedMessages == roomMessages.Count)
-			{
-				// nothing new to render
-				return;
-			}
-			
-			var chatMessages = new List<INTopicMessage>();
-			chatMessages.AddRange(roomMessages.Values);
-			chatMessages.Sort(new ByMessageCreatedAt());
+        // this is used to keep track of rendered messages for that user  
+        private int _renderedMessages = 0;
 
-			var allMessages = "";
-			foreach (var msg in chatMessages)
-			{
-				var chatMessage = JsonUtility.FromJson<ChatMessage>(msg.Data);
-				allMessages += string.Format(@"
+        private void Start()
+        {
+            _chatMessageLabel = GameObject.Find("ChatMessageLabel").GetComponent<Text>();
+            _sendMessageButton = GameObject.Find("SendMessageButton").GetComponent<Button>();
+            _inputField = GameObject.Find("InputField").GetComponent<InputField>();
+            _topicLabel = GameObject.Find("TopicLabel").GetComponent<Text>();
+            _topicLabel.text = RoomName;
+
+            _sendMessageButton.interactable = false;
+
+            JoinRoomTopic();
+            FetchHistoricMessages();
+        }
+
+        private void Update()
+        {
+            if (!StateManager.Instance.Topics.ContainsKey(RoomName))
+            {
+                // we've not subscribed to the topic yet - let's ignore rendering anything.
+                return;
+            }
+
+            // if the number of rendered messages is the same as messages we have, we don't need to re-render.
+            var topic = StateManager.Instance.Topics[RoomName];
+            var roomMessages = StateManager.Instance.ChatMessages[topic];
+            if (_renderedMessages == roomMessages.Count)
+            {
+                // nothing new to render
+                return;
+            }
+
+            var chatMessages = new List<INTopicMessage>();
+            chatMessages.AddRange(roomMessages.Values);
+            chatMessages.Sort(new ByMessageCreatedAt());
+
+            var allMessages = "";
+            foreach (var msg in chatMessages)
+            {
+                var chatMessage = JsonUtility.FromJson<ChatMessage>(msg.Data);
+                allMessages += string.Format(@"
 {0} said: {1}
-					", msg.Handle, chatMessage.Body);
-			}
-			
-			_chatMessageLabel.text = allMessages;
-		}
+				", msg.Handle, chatMessage.Body);
+            }
 
-		private void JoinRoomTopic()
-		{
-			var msg = new NTopicJoinMessage.Builder().TopicRoom(RoomName).Build(); 
-			NakamaManager.Instance.TopicJoin(RoomName, msg);
-			_sendMessageButton.interactable = true;	
-		}
+            _chatMessageLabel.text = allMessages;
+        }
 
-		private void FetchHistoricMessages()
-		{
-			var builder = new NTopicMessagesListMessage.Builder();
-			builder.TopicRoom(RoomName);
-			NakamaManager.Instance.TopicMessageList(RoomName, builder);	
-		}
+        private void JoinRoomTopic()
+        {
+            var msg = new NTopicJoinMessage.Builder().TopicRoom(RoomName).Build();
+            NakamaManager.Instance.TopicJoin(RoomName, msg);
+            _sendMessageButton.interactable = true;
+        }
 
-		public void SendRoomMessage()
-		{
-			var topic = StateManager.Instance.Topics[RoomName];
-			
-			var chatMessage = new ChatMessage {Body = _inputField.text};
-			
-			var msg = NTopicMessageSendMessage.Default(topic, JsonUtility.ToJson(chatMessage));
-			NakamaManager.Instance.TopicSendMessage(msg);
-		}
-	}
+        private void FetchHistoricMessages()
+        {
+            var builder = new NTopicMessagesListMessage.Builder();
+            builder.TopicRoom(RoomName);
+            NakamaManager.Instance.TopicMessageList(RoomName, builder);
+        }
+
+        public void SendRoomMessage()
+        {
+            var topic = StateManager.Instance.Topics[RoomName];
+
+            var chatMessage = new ChatMessage {Body = _inputField.text};
+
+            var msg = NTopicMessageSendMessage.Default(topic, JsonUtility.ToJson(chatMessage));
+            NakamaManager.Instance.TopicSendMessage(msg);
+        }
+    }
 }

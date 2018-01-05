@@ -15,15 +15,15 @@
  */
 
 // Comment out this line to turn off all logging - for convience
+
 #define LOG_OUTPUT
 
 using UnityEngine;
 
 namespace Framework
-{   
+{
     public static class Logger
     {
-
         /// <summary>
         ///   <para>Logs message to the Unity Console.</para>
         /// </summary>
@@ -33,7 +33,6 @@ namespace Framework
         {
 #if LOG_OUTPUT && (DEVELOPMENT_BUILD || UNITY_EDITOR)
             Debug.Log(message);
-
 #endif
         }
 
@@ -45,10 +44,10 @@ namespace Framework
         public static void Log(object message, Object context)
         {
 #if LOG_OUTPUT && (DEVELOPMENT_BUILD || UNITY_EDITOR)
-          Debug.Log(message, context);
+            Debug.Log(message, context);
 #endif
         }
-    
+
         /// <summary>
         ///   <para>Logs a formatted message to the Unity Console.</para>
         /// </summary>
@@ -58,10 +57,10 @@ namespace Framework
         public static void LogFormat(string format, params object[] args)
         {
 #if LOG_OUTPUT && (DEVELOPMENT_BUILD || UNITY_EDITOR)
-          Debug.LogFormat(format, args);
+            Debug.LogFormat(format, args);
 #endif
         }
-    
+
         /// <summary>
         ///   <para>Logs a formatted message to the Unity Console.</para>
         /// </summary>
@@ -71,10 +70,10 @@ namespace Framework
         public static void LogFormat(Object context, string format, params object[] args)
         {
 #if LOG_OUTPUT && (DEVELOPMENT_BUILD || UNITY_EDITOR)
-          Debug.LogFormat(context, format, args);
+            Debug.LogFormat(context, format, args);
 #endif
         }
-    
+
         /// <summary>
         ///   <para>A variant of Debug.Log that logs an error message to the console.</para>
         /// </summary>
@@ -83,10 +82,10 @@ namespace Framework
         public static void LogError(object message)
         {
 #if LOG_OUTPUT && (DEVELOPMENT_BUILD || UNITY_EDITOR)
-          Debug.LogError(message);
+            Debug.LogError(message);
 #endif
         }
-    
+
         /// <summary>
         ///   <para>A variant of Debug.Log that logs an error message to the console.</para>
         /// </summary>
@@ -95,10 +94,10 @@ namespace Framework
         public static void LogError(object message, Object context)
         {
 #if LOG_OUTPUT && (DEVELOPMENT_BUILD || UNITY_EDITOR)
-          Debug.LogError(message, context);
+            Debug.LogError(message, context);
 #endif
         }
-    
+
         /// <summary>
         ///   <para>Logs a formatted error message to the Unity console.</para>
         /// </summary>
@@ -108,10 +107,10 @@ namespace Framework
         public static void LogErrorFormat(string format, params object[] args)
         {
 #if LOG_OUTPUT && (DEVELOPMENT_BUILD || UNITY_EDITOR)
-          Debug.LogErrorFormat(format, args);
+            Debug.LogErrorFormat(format, args);
 #endif
         }
-    
+
         /// <summary>
         ///   <para>Logs a formatted error message to the Unity console.</para>
         /// </summary>
@@ -121,7 +120,7 @@ namespace Framework
         public static void LogErrorFormat(Object context, string format, params object[] args)
         {
 #if LOG_OUTPUT && (DEVELOPMENT_BUILD || UNITY_EDITOR)
-          Debug.LogErrorFormat(context, format, args);
+            Debug.LogErrorFormat(context, format, args);
 #endif
         }
     }
