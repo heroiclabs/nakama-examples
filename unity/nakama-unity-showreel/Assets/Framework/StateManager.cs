@@ -22,16 +22,17 @@ namespace Framework
     public class StateManager : Singleton<StateManager>
     {
         public INSelf SelfInfo { get; internal set; }
-        
+
         public readonly List<INFriend> Friends = new List<INFriend>();
         public readonly List<INGroup> SearchedGroups = new List<INGroup>();
         public readonly List<INGroupSelf> JoinedGroups = new List<INGroupSelf>();
-        
+
         // Map of User ID/Room Name to <TopicId, List of messages> for Chat Message
         public readonly Dictionary<string, INTopicId> Topics = new Dictionary<string, INTopicId>();
+
         public readonly Dictionary<INTopicId, Dictionary<string, INTopicMessage>> ChatMessages =
             new Dictionary<INTopicId, Dictionary<string, INTopicMessage>>();
-        
+
         public readonly List<INNotification> Notifications = new List<INNotification>();
     }
 

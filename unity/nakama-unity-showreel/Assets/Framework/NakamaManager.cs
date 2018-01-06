@@ -230,7 +230,7 @@ namespace Framework
                 {
                     StateManager.Instance.SearchedGroups.Clear();
                 }
-                
+
                 foreach (var group in groups.Results)
                 {
                     // check to see if SearchedGroups has 'maxGroups' groups.
@@ -238,7 +238,7 @@ namespace Framework
                     {
                         return;
                     }
-                    
+
                     StateManager.Instance.SearchedGroups.Add(group);
                 }
 
@@ -303,7 +303,7 @@ namespace Framework
                     {
                         return;
                     }
-                    
+
                     StateManager.Instance.ChatMessages[topic].Add(chatMessage.MessageId, chatMessage);
                 }
 
@@ -338,7 +338,7 @@ namespace Framework
                     {
                         return;
                     }
-                    
+
                     StateManager.Instance.Notifications.Add(notification);
                 }
 
