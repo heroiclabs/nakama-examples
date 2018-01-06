@@ -67,12 +67,12 @@ namespace Showreel
 
             var chatMessages = new List<INTopicMessage>();
             chatMessages.AddRange(roomMessages.Values);
-            chatMessages.Sort(new ByMessageCreatedAt());
+            chatMessages.Sort(new TopicMessageComparer());
 
             var allMessages = "";
             foreach (var msg in chatMessages)
             {
-                var chatMessage = JsonUtility.FromJson<ChatMessage>(msg.Data);
+                var chatMessage = JsonUtility.FromJson<ChatMessageContent>(msg.Data);
                 allMessages += string.Format(@"
 {0} said: {1}
 				", msg.Handle, chatMessage.Body);
@@ -90,16 +90,17 @@ namespace Showreel
 
         private void FetchHistoricMessages()
         {
+            var topic = StateManager.Instance.Topics[RoomName];
             var builder = new NTopicMessagesListMessage.Builder();
             builder.TopicRoom(RoomName);
-            NakamaManager.Instance.TopicMessageList(RoomName, builder);
+            NakamaManager.Instance.TopicMessageList(topic, builder);
         }
 
         public void SendRoomMessage()
         {
             var topic = StateManager.Instance.Topics[RoomName];
 
-            var chatMessage = new ChatMessage {Body = _inputField.text};
+            var chatMessage = new ChatMessageContent {Body = _inputField.text};
 
             var msg = NTopicMessageSendMessage.Default(topic, JsonUtility.ToJson(chatMessage));
             NakamaManager.Instance.TopicSendMessage(msg);

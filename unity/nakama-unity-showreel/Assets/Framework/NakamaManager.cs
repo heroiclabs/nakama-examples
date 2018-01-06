@@ -62,12 +62,12 @@ namespace Framework
             _client = new NClient.Builder(ServerKey).Host(HostIp).Port(Port).SSL(UseSsl).Build();
             _client.OnTopicMessage = message =>
             {
-                var chatMessage = StateManager.Instance.ChatMessages;
-                foreach (var topic in chatMessage.Keys)
+                var chatMessages = StateManager.Instance.ChatMessages;
+                foreach (var topic in chatMessages.Keys)
                 {
                     if (topic.Id.Equals(message.Topic.Id))
                     {
-                        chatMessage[topic].Add(message.MessageId, message);
+                        chatMessages[topic].Add(message.MessageId, message);
                     }
                 }
             };
@@ -222,7 +222,7 @@ namespace Framework
             }, ErrorHandler);
         }
 
-        public void GroupsList(NGroupsListMessage.Builder message, bool appendList = false)
+        public void GroupsList(NGroupsListMessage.Builder message, bool appendList = false, uint maxGroups = 100)
         {
             _client.Send(message.Build(), groups =>
             {
@@ -230,7 +230,17 @@ namespace Framework
                 {
                     StateManager.Instance.SearchedGroups.Clear();
                 }
-                StateManager.Instance.SearchedGroups.AddRange(groups.Results);
+                
+                foreach (var group in groups.Results)
+                {
+                    // check to see if SearchedGroups has 'maxGroups' groups.
+                    if (StateManager.Instance.SearchedGroups.Count >= maxGroups)
+                    {
+                        return;
+                    }
+                    
+                    StateManager.Instance.SearchedGroups.Add(group);
+                }
 
                 // Recursively fetch the next set of groups and append
                 if (groups.Cursor != null && groups.Cursor.Value != "")
@@ -276,12 +286,11 @@ namespace Framework
             }, ErrorHandler);
         }
 
-        public void TopicMessageList(string userIdOrRoom, NTopicMessagesListMessage.Builder message,
-            bool appendList = false)
+        public void TopicMessageList(INTopicId topic,  NTopicMessagesListMessage.Builder message,
+            bool appendList = false, uint maxMessages = 100)
         {
             _client.Send(message.Build(), messages =>
             {
-                var topic = StateManager.Instance.Topics[userIdOrRoom];
                 if (!appendList)
                 {
                     StateManager.Instance.ChatMessages[topic].Clear();
@@ -289,6 +298,12 @@ namespace Framework
 
                 foreach (var chatMessage in messages.Results)
                 {
+                    // check to see if ChatMessages has 'maxMessages' messages.
+                    if (StateManager.Instance.ChatMessages[topic].Count >= maxMessages)
+                    {
+                        return;
+                    }
+                    
                     StateManager.Instance.ChatMessages[topic].Add(chatMessage.MessageId, chatMessage);
                 }
 
@@ -296,7 +311,7 @@ namespace Framework
                 if (messages.Cursor != null && messages.Cursor.Value != "")
                 {
                     message.Cursor(messages.Cursor);
-                    TopicMessageList(userIdOrRoom, message, true);
+                    TopicMessageList(topic, message, true);
                 }
             }, ErrorHandler);
         }

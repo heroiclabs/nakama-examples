@@ -19,7 +19,7 @@ using System;
 namespace Showreel
 {
     [Serializable]
-    public class ChatMessage
+    public class ChatMessageContent
     {
         public string Body;
     }

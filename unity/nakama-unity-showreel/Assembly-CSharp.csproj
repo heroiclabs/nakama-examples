@@ -186,7 +186,7 @@
     <Compile Include="Assets\Nakama\Plugins\Nakama\Properties\AssemblyInfo.cs" />
     <Compile Include="Assets\Showreel\Authentication.cs" />
     <Compile Include="Assets\Showreel\ChatFriendView.cs" />
-    <Compile Include="Assets\Showreel\ChatMessage.cs" />
+    <Compile Include="Assets\Showreel\ChatMessageContent.cs" />
     <Compile Include="Assets\Showreel\ChatRoomView.cs" />
     <Compile Include="Assets\Showreel\FakeData.cs" />
     <Compile Include="Assets\Showreel\FriendsView.cs" />

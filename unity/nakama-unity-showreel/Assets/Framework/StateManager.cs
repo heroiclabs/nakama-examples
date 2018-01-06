@@ -22,18 +22,18 @@ namespace Framework
     public class StateManager : Singleton<StateManager>
     {
         public INSelf SelfInfo { get; internal set; }
-        public List<INFriend> Friends = new List<INFriend>();
-        public List<INGroup> SearchedGroups = new List<INGroup>();
-        public List<INGroupSelf> JoinedGroups = new List<INGroupSelf>();
-
+        
+        public readonly List<INFriend> Friends = new List<INFriend>();
+        public readonly List<INGroup> SearchedGroups = new List<INGroup>();
+        public readonly List<INGroupSelf> JoinedGroups = new List<INGroupSelf>();
+        
         // Map of User ID/Room Name to <TopicId, List of messages> for Chat Message
-        public Dictionary<string, INTopicId> Topics = new Dictionary<string, INTopicId>();
-
-        public Dictionary<INTopicId, Dictionary<string, INTopicMessage>> ChatMessages =
+        public readonly Dictionary<string, INTopicId> Topics = new Dictionary<string, INTopicId>();
+        public readonly Dictionary<INTopicId, Dictionary<string, INTopicMessage>> ChatMessages =
             new Dictionary<INTopicId, Dictionary<string, INTopicMessage>>();
     }
 
-    public class ByMessageCreatedAt : IComparer<INTopicMessage>
+    public class TopicMessageComparer : IComparer<INTopicMessage>
     {
         public int Compare(INTopicMessage x, INTopicMessage y)
         {

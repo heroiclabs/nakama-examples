@@ -120,9 +120,10 @@ namespace Showreel
 
         private void FetchHistoricMessages(INUser user)
         {
+            var topic = StateManager.Instance.Topics[user.Id];
             var builder = new NTopicMessagesListMessage.Builder();
             builder.TopicDirectMessage(user.Id);
-            NakamaManager.Instance.TopicMessageList(user.Id, builder);
+            NakamaManager.Instance.TopicMessageList(topic, builder);
         }
 
         private void RenderMessages()
@@ -146,12 +147,12 @@ namespace Showreel
 
             var chatMessages = new List<INTopicMessage>();
             chatMessages.AddRange(friendMessages.Values);
-            chatMessages.Sort(new ByMessageCreatedAt());
+            chatMessages.Sort(new TopicMessageComparer());
 
             _chatMessages = "";
             foreach (var msg in chatMessages)
             {
-                var chatMessage = JsonUtility.FromJson<ChatMessage>(msg.Data);
+                var chatMessage = JsonUtility.FromJson<ChatMessageContent>(msg.Data);
                 _chatMessages += string.Format(@"
 {0} said: {1}
 				", msg.Handle, chatMessage.Body);
@@ -163,7 +164,7 @@ namespace Showreel
             var user = StateManager.Instance.Friends[_friendSelectorDropdown.value];
             var topic = StateManager.Instance.Topics[user.Id];
 
-            var chatMessage = new ChatMessage {Body = _inputField.text};
+            var chatMessage = new ChatMessageContent {Body = _inputField.text};
 
             var msg = NTopicMessageSendMessage.Default(topic, JsonUtility.ToJson(chatMessage));
             NakamaManager.Instance.TopicSendMessage(msg);
