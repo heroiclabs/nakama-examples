@@ -286,7 +286,7 @@ namespace Framework
             }, ErrorHandler);
         }
 
-        public void TopicMessageList(INTopicId topic,  NTopicMessagesListMessage.Builder message,
+        public void TopicMessageList(INTopicId topic, NTopicMessagesListMessage.Builder message,
             bool appendList = false, uint maxMessages = 100)
         {
             _client.Send(message.Build(), messages =>
@@ -319,6 +319,36 @@ namespace Framework
         public void TopicSendMessage(NTopicMessageSendMessage message)
         {
             _client.Send(message, acks => { }, ErrorHandler);
+        }
+
+        public void NotificationsList(NNotificationsListMessage.Builder message,
+            bool appendList = false, uint maxNotifications = 100)
+        {
+            _client.Send(message.Build(), notifications =>
+            {
+                if (!appendList)
+                {
+                    StateManager.Instance.Notifications.Clear();
+                }
+
+                foreach (var notification in notifications.Results)
+                {
+                    // check to see if ChatMessages has 'maxMessages' messages.
+                    if (StateManager.Instance.Notifications.Count >= maxNotifications)
+                    {
+                        return;
+                    }
+                    
+                    StateManager.Instance.Notifications.Add(notification);
+                }
+
+                // Recursively fetch the next set of groups and append
+                if (notifications.Cursor != null && notifications.Cursor.Value != "")
+                {
+                    message.Cursor(notifications.Cursor.Value);
+                    NotificationsList(message, true);
+                }
+            }, ErrorHandler);
         }
     }
 }

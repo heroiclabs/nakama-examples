@@ -192,6 +192,7 @@
     <Compile Include="Assets\Showreel\FriendsView.cs" />
     <Compile Include="Assets\Showreel\GroupsView.cs" />
     <Compile Include="Assets\Showreel\MainSceneLoader.cs" />
+    <Compile Include="Assets\Showreel\NotificationsView.cs" />
     <Compile Include="Assets\Showreel\SelectionMenu.cs" />
     <Compile Include="Assets\Showreel\UserAccountView.cs" />
     <None Include="Assets\Nakama\Example\README.txt" />

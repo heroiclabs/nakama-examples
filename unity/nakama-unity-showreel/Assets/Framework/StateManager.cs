@@ -31,6 +31,8 @@ namespace Framework
         public readonly Dictionary<string, INTopicId> Topics = new Dictionary<string, INTopicId>();
         public readonly Dictionary<INTopicId, Dictionary<string, INTopicMessage>> ChatMessages =
             new Dictionary<INTopicId, Dictionary<string, INTopicMessage>>();
+        
+        public readonly List<INNotification> Notifications = new List<INNotification>();
     }
 
     public class TopicMessageComparer : IComparer<INTopicMessage>

@@ -23,3 +23,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Showreel/ChatRoomScene.unity
     guid: eda2be2e6c95a48e99be07192b3f777e
+  - enabled: 1
+    path: Assets/Showreel/NotificationsScene.unity
+    guid: 34a8a3f414c524bfa8a5fb2eb09fd5ba
