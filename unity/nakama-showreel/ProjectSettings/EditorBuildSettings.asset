@@ -7,22 +7,25 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Showreel/AuthenticationScene.unity
-    guid: e0812710db7bc4d9e8534ac975d5a8ce
-  - enabled: 1
-    path: Assets/Showreel/SelectionMenuScene.unity
-    guid: 93a37e2a0a29644748f76144833a8498
-  - enabled: 1
-    path: Assets/Showreel/UserAccountScene.unity
-    guid: b4b663d81a9ed4d599a52f6a3f182647
-  - enabled: 1
-    path: Assets/Showreel/GroupsScene.unity
-    guid: 9b95afe1899e44984ac25aa8a807e705
+    guid: 969c1fb6e1b5c4f478c4deb186559309
   - enabled: 1
     path: Assets/Showreel/ChatFriendScene.unity
-    guid: 19f6f57e9674044dc9e4c22f00b39a42
+    guid: 4752466f4b7b44af69fa3c2e5f403fc1
   - enabled: 1
     path: Assets/Showreel/ChatRoomScene.unity
-    guid: eda2be2e6c95a48e99be07192b3f777e
+    guid: 381bd8ef7952f48df98544cfc8d40365
+  - enabled: 1
+    path: Assets/Showreel/FriendsScene.unity
+    guid: b5cc63c98eedc415c896858882653a10
+  - enabled: 1
+    path: Assets/Showreel/GroupsScene.unity
+    guid: a70e62f7c3ae44ae78a65e8c2874479f
   - enabled: 1
     path: Assets/Showreel/NotificationsScene.unity
-    guid: 34a8a3f414c524bfa8a5fb2eb09fd5ba
+    guid: 7eb97d1f50c0349e3a2e3b86f4988c83
+  - enabled: 1
+    path: Assets/Showreel/SelectionMenuScene.unity
+    guid: fef8c4363fc8f43ce9f307e747a436d6
+  - enabled: 1
+    path: Assets/Showreel/UserAccountScene.unity
+    guid: b1efab601b4164f0ab466b948133bb90

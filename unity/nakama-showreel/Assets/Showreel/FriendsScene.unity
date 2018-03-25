@@ -1245,7 +1245,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1060941954}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79a809fafbc8c448ab492829de9f7adb, type: 3}
+  m_Script: {fileID: 11500000, guid: c6c67ba82820745b9bf0b4c9052806c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1060941956
@@ -2044,7 +2044,6 @@ GameObject:
   - component: {fileID: 2026211322}
   - component: {fileID: 2026211321}
   - component: {fileID: 2026211320}
-  - component: {fileID: 2026211319}
   - component: {fileID: 2026211318}
   m_Layer: 5
   m_Name: Canvas
@@ -2075,17 +2074,6 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
   m_ChildControlHeight: 0
---- !u!114 &2026211319
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2026211317}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf4e6c2946d23473f84915070fa5b9cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2026211320
 MonoBehaviour:
   m_ObjectHideFlags: 0
