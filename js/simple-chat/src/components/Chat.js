@@ -57,38 +57,6 @@ export default class Chat extends Component {
       this.setState({ connected: false, autoInterval: null });
       this.client = null;
     };
-
-    // this.client.ontopicpresence = presence => {
-    //   if (presence.joins) {
-    //     for (let i = 0, l = presence.joins.length; i < l; i++) {
-    //       // convert a presence notification to a chat message for simple view logic.
-    //       const now = `${Date.now()}`;
-    //       this.addMessage({
-    //         createdAt: now,
-    //         messageId: now,
-    //         userId: presence.joins[i].userId,
-    //         data: {
-    //           content: "Joined the room."
-    //         }
-    //       });
-    //     }
-    //   }
-    //   if (presence.leaves) {
-    //     for (let i = 0, l = presence.leaves.length; i < l; i++) {
-    //       // convert a presence notification to a chat message for simple view logic.
-    //       const now = `${Date.now()}`;
-    //       this.addMessage({
-    //         createdAt: now,
-    //         messageId: now,
-    //         userId: presence.leaves[i].userId,
-    //         data: {
-    //           content: "Left the room."
-    //         }
-    //       });
-    //     }
-    //   }
-    // };
-
     const randomUserId = new DeviceUUID().get();
 
     this.client
@@ -185,12 +153,18 @@ export default class Chat extends Component {
       return;
     }
     const intervalId = window.setInterval(() => {
-      var message = new nakamajs.TopicMessageSendRequest();
-      message.topic = { room: ROOM_NAME };
-      message.data = {
-        content: "Sent automated message."
-      };
-      this.client.send(message).catch(errorHandler);
+      let data = { data: "Sent automated message." };
+      this.socket
+        .send({
+          channel_message_send: {
+            channel_id: this.state.roomId,
+            content: data
+          }
+        })
+        .then(ack => {
+          this.setState({ message: "" });
+        })
+        .catch(errorHandler);
     }, INTERVAL_PERIOD_MS);
     this.setState({ autoInterval: intervalId });
   };
