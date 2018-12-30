@@ -13,92 +13,28 @@ import {
 import { DeviceUUID } from "device-uuid";
 import * as nakamajs from "@heroiclabs/nakama-js";
 
-const TOPIC_NAME = "Topic1";
+const ROOM_NAME = "Room1";
 const INTERVAL_PERIOD_MS = 2000;
 
 const errorHandler = error => console.log("Error occurred: %o", error);
 
 export default class Chat extends Component {
   state = {
-    host: "127.0.0.1",
+    host: "165.227.128.175",
     port: "7350",
     serverkey: "defaultkey",
     ssl: false,
     connected: false,
-
+    roomId: "",
     messages: [],
     message: "",
     autoInterval: null,
-
     logs: []
   };
 
+  socket = null;
   client = null;
-  device = Date.now().toString(); // used as a generated device id
   session = null;
-
-  addLogMessage = content => {
-    const logs = this.state.logs.concat({
-      ts: Date.now(),
-      message: content
-    });
-    this.setState({ logs: logs });
-  };
-
-  addMessage = message => {
-    const messages = this.state.messages.concat(message);
-    this.setState({ messages: messages });
-  };
-
-  changeAutoInterval = event => {
-    if (this.state.autoInterval) {
-      window.clearInterval(this.state.autoInterval);
-      this.setState({ autoInterval: null });
-      return;
-    }
-    const intervalId = window.setInterval(() => {
-      var message = new nakamajs.TopicMessageSendRequest();
-      message.topic = { room: TOPIC_NAME };
-      message.data = {
-        content: "Sent automated message."
-      };
-      this.client.send(message).catch(errorHandler);
-    }, INTERVAL_PERIOD_MS);
-    this.setState({ autoInterval: intervalId });
-  };
-
-  changeCheckbox = name => () => this.setState({ [name]: !this.state[name] });
-
-  changeField = name => event => this.setState({ [name]: event.target.value });
-
-  sessionHandler = session => {
-    const socket = this.client.createSocket();
-    socket
-      .connect(session)
-      .then(session => {
-        this.session = session;
-        this.addLogMessage(`New session connected as '${session.id}' user.`);
-        this.setState({ connected: true });
-
-        var message = new nakamajs.TopicsJoinRequest();
-        message.room(TOPIC_NAME);
-        return this.client.send(message);
-      })
-      .then(result => {
-        const topic = result.topics[0];
-        this.addLogMessage(
-          `User '${topic.self.userId}' joined '${topic.topic.room}' room.`
-        );
-
-        var message = new nakamajs.TopicMessageSendRequest();
-        message.topic = topic.topic;
-        message.data = {
-          content: "Hello!"
-        };
-        return this.client.send(message);
-      })
-      .catch(errorHandler);
-  };
 
   submitConnect = event => {
     event.preventDefault();
@@ -122,38 +58,36 @@ export default class Chat extends Component {
       this.client = null;
     };
 
-    this.client.ontopicpresence = presence => {
-      if (presence.joins) {
-        for (let i = 0, l = presence.joins.length; i < l; i++) {
-          // convert a presence notification to a chat message for simple view logic.
-          const now = `${Date.now()}`;
-          this.addMessage({
-            createdAt: now,
-            messageId: now,
-            userId: presence.joins[i].userId,
-            data: {
-              content: "Joined the room."
-            }
-          });
-        }
-      }
-      if (presence.leaves) {
-        for (let i = 0, l = presence.leaves.length; i < l; i++) {
-          // convert a presence notification to a chat message for simple view logic.
-          const now = `${Date.now()}`;
-          this.addMessage({
-            createdAt: now,
-            messageId: now,
-            userId: presence.leaves[i].userId,
-            data: {
-              content: "Left the room."
-            }
-          });
-        }
-      }
-    };
-
-    this.client.ontopicmessage = message => this.addMessage(message);
+    // this.client.ontopicpresence = presence => {
+    //   if (presence.joins) {
+    //     for (let i = 0, l = presence.joins.length; i < l; i++) {
+    //       // convert a presence notification to a chat message for simple view logic.
+    //       const now = `${Date.now()}`;
+    //       this.addMessage({
+    //         createdAt: now,
+    //         messageId: now,
+    //         userId: presence.joins[i].userId,
+    //         data: {
+    //           content: "Joined the room."
+    //         }
+    //       });
+    //     }
+    //   }
+    //   if (presence.leaves) {
+    //     for (let i = 0, l = presence.leaves.length; i < l; i++) {
+    //       // convert a presence notification to a chat message for simple view logic.
+    //       const now = `${Date.now()}`;
+    //       this.addMessage({
+    //         createdAt: now,
+    //         messageId: now,
+    //         userId: presence.leaves[i].userId,
+    //         data: {
+    //           content: "Left the room."
+    //         }
+    //       });
+    //     }
+    //   }
+    // };
 
     const randomUserId = new DeviceUUID().get();
 
@@ -164,42 +98,106 @@ export default class Chat extends Component {
         username: "mycustomusername"
       })
       .then(session => {
-        console.info("Successfully authenticated:", session).then(session => {
-          console.log("session : ", session);
-          console.info("Successfully authenticated:", session);
-        });
+        console.info("Successfully authenticated:", session);
+        this.sessionHandler(session);
       })
       .catch(error => {
         console.log("error : ", error);
       });
+  };
 
-    // this.client
-    //   .authenticateCustom({
-    //     id: randomUserId,
-    //     create: true,
-    //     username: "mycustomusername"
-    //   })
-    //   .then(this.sessionHandler)
-    //   .catch(error => {
-    //     errorHandler(error);
-    //   });
+  sessionHandler = session => {
+    this.socket = this.client.createSocket(this.state.ssl, false);
+
+    this.socket.connect(session).then(session => {
+      this.session = session;
+      this.addLogMessage(`New session connected as '${session.id}' user.`);
+      this.setState({ connected: true });
+      this.socket.onchannelmessage = message => this.addMessage(message);
+      this.socket
+        .send({
+          channel_join: {
+            type: 1,
+            target: ROOM_NAME,
+            persistence: true,
+            hidden: false
+          }
+        })
+        .then(response => {
+          console.log(
+            "You can now send message to channel id ",
+            response.channel.id
+          );
+          this.setState({
+            roomId: response.channel.id
+          });
+
+          let data = { data: "Hello!" };
+
+          this.socket
+            .send({
+              channel_message_send: {
+                channel_id: response.channel.id,
+                content: data
+              }
+            })
+            .catch(errorHandler);
+        });
+    });
   };
 
   submitMessage = event => {
     event.preventDefault();
 
-    var message = new nakamajs.TopicMessageSendRequest();
-    message.topic = { room: TOPIC_NAME };
-    message.data = {
-      content: this.state.message
-    };
-    this.client
-      .send(message)
+    let data = { data: this.state.message };
+    this.socket
+      .send({
+        channel_message_send: {
+          channel_id: this.state.roomId,
+          content: data
+        }
+      })
       .then(ack => {
         this.setState({ message: "" });
       })
       .catch(errorHandler);
   };
+
+  addLogMessage = content => {
+    console.log(content);
+    const logs = this.state.logs.concat({
+      ts: Date.now(),
+      message: content
+    });
+    this.setState({ logs: logs });
+  };
+
+  addMessage = message => {
+    console.log("message : ", message);
+    const messages = this.state.messages.concat(message);
+    this.setState({ messages: messages });
+  };
+
+  changeAutoInterval = event => {
+    if (this.state.autoInterval) {
+      window.clearInterval(this.state.autoInterval);
+      this.setState({ autoInterval: null });
+      return;
+    }
+    const intervalId = window.setInterval(() => {
+      var message = new nakamajs.TopicMessageSendRequest();
+      message.topic = { room: ROOM_NAME };
+      message.data = {
+        content: "Sent automated message."
+      };
+      this.client.send(message).catch(errorHandler);
+    }, INTERVAL_PERIOD_MS);
+    this.setState({ autoInterval: intervalId });
+  };
+
+  changeCheckbox = name => () => this.setState({ [name]: !this.state[name] });
+
+  changeField = name => event => this.setState({ [name]: event.target.value });
 
   render() {
     const messages = [...this.state.messages].sort(
@@ -257,16 +255,14 @@ export default class Chat extends Component {
         >
           <Comment.Group minimal>
             {messages.map(message => (
-              <Comment key={message.messageId}>
+              <Comment key={message.message_id}>
                 <Comment.Content>
-                  <Comment.Author>{message.userId}</Comment.Author>
+                  <Comment.Author>{message.username}</Comment.Author>
                   <Comment.Metadata>
-                    <span>
-                      {new Date(message.createdAt * 1).toTimeString()}
-                    </span>
+                    <span>{new Date(message.create_time).toTimeString()}</span>
                   </Comment.Metadata>
                   <Comment.Text>
-                    <p>{message.data.content}</p>
+                    <p>{message.content.data}</p>
                   </Comment.Text>
                 </Comment.Content>
               </Comment>
