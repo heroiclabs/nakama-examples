@@ -20,7 +20,7 @@ const errorHandler = error => console.log("Error occurred: %o", error);
 
 export default class Chat extends Component {
   state = {
-    host: "165.227.128.175",
+    host: "127.0.0.1",
     port: "7350",
     serverkey: "defaultkey",
     ssl: false,
